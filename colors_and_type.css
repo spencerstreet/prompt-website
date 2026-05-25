@@ -1,0 +1,206 @@
+/* ============================================================
+   Prompt — Colors & Type
+   The social social media app.
+   ============================================================ */
+
+@font-face {
+  font-family: "ABC Repro";
+  src: url("./fonts/ABCReproVariable-Trial.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Display: Rauschen B Trial (commercial). Substituted with Inter Tight (Google Fonts) — closest open
+   neo-grotesque with tight metrics + variable weight. FLAGGED — request original. */
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  /* ── Brand sunrise palette (canonical named system) ─────── */
+  --c-firelight:       #F77228;   /* Primary accent — orange used everywhere */
+  --c-afterglow:       #F56414;   /* Warmth, social playfulness — slightly redder than Firelight */
+  --c-golden-hour:     #FFC05A;   /* Optimism, early evening */
+  --c-first-light:     #EAF3B0;   /* Affirmative / payoff — "Going" pill, "That's it." */
+  --c-skywash:         #B5C9D5;   /* Daytime clarity, calm */
+  --c-midnight:        #12167A;   /* Depth, trust, nightlife — not used in current app UI */
+  --c-after-hours:     #1D0A1D;   /* Mystery, late-night edge */
+  --c-cloud-cover:     #D3D3D8;   /* Neutral / utility balance */
+
+  /* Aliases for legacy tokens — keep so existing cards don't break */
+  --p-orange-deep:     var(--c-firelight);
+  --p-orange:          #FE750F;   /* hot orange (text accent, badges) */
+  --p-orange-warm:     #FF9D5F;   /* warm orange (gradient mid) */
+  --p-amber:           var(--c-golden-hour);
+  --p-orange-red:      var(--c-afterglow);
+
+  /* ── Calm pastels (UI surfaces & tags) ──────────────────── */
+  --p-blue-mist:       #B5C1D4;   /* dusty periwinkle */
+  --p-blue-mist-2:     #B5C9D5;   /* warmer dusty blue */
+  --p-blue-sky:        #90DAEE;   /* map / location surface */
+  --p-lemon:           #EAF3B0;   /* primary CTA fill (lemon-lime) */
+  --p-lemon-soft:      #E7FAB8;   /* tag / status fill */
+  --p-pink:            #F5277A;   /* hot pink accent */
+
+  /* ── Inks & neutrals ────────────────────────────────────── */
+  --p-ink:             #031504;   /* near-black green-ink (body text) */
+  --p-ink-violet:      #1D0A1D;   /* deep aubergine (intro splash bg) */
+  --p-ink-graphite:    #231F20;   /* graphite */
+  --p-ink-soft:        #252925;   /* button label */
+  --p-ink-9:           #090909;
+  --p-violet-deep:     #3508D7;   /* deep violet (link/by-line) */
+  --p-violet:          #5A5AFA;   /* electric violet */
+  --p-blue-pure:       #0000FF;   /* pure blue (decorative) */
+
+  --p-white:           #FFFFFF;
+  --p-white-warm:      #FEFFFD;
+  --p-bg-paper:        #F5F5F5;   /* secondary surface (search bars, chips) */
+  --p-bg-stone:        #DBDAD3;   /* warm grey */
+  --p-line-soft:       #E8E8E8;
+  --p-line:            #D3D3D8;
+  --p-line-strong:     #555555;
+
+  /* ── Semantic tokens ────────────────────────────────────── */
+  --fg-1:              var(--p-ink);
+  --fg-2:              rgba(3,21,4,0.80);   /* secondary text */
+  --fg-3:              rgba(3,21,4,0.60);   /* tertiary / placeholder */
+  --fg-4:              rgba(3,21,4,0.50);   /* quaternary / meta */
+  --fg-on-dark:        var(--p-white);
+  --fg-on-dark-2:      rgba(255,255,255,0.78);
+  --fg-link:           var(--p-violet-deep);
+  --fg-link-soft:      rgba(61,39,225,0.69);
+
+  --bg-base:           var(--p-white);
+  --bg-paper:          var(--p-bg-paper);
+  --bg-dark:           var(--p-ink-violet);
+  --bg-stone:          var(--p-bg-stone);
+
+  --accent:            var(--p-orange);
+  --accent-warm:       var(--p-orange-warm);
+  --cta-fill:          var(--p-lemon);
+  --status-going:      var(--p-lemon-soft);
+  --map-surface:       var(--p-blue-sky);
+
+  --border-hairline:   0.5px solid rgba(0,0,0,0.20);
+  --border-soft:       1px solid var(--p-line);
+  --border-strong:     1px solid var(--p-ink);
+
+  /* ── Radii ──────────────────────────────────────────────── */
+  --r-xs:  4px;
+  --r-sm:  9px;       /* small chip / icon tile */
+  --r-md:  12px;      /* card image */
+  --r-lg:  17px;      /* event card / detail card */
+  --r-xl:  26px;      /* comment field */
+  --r-2xl: 36px;      /* phone screen inner */
+  --r-3xl: 51px;      /* phone screen outer */
+  --r-pill: 999px;
+
+  /* ── Shadows ────────────────────────────────────────────── */
+  --shadow-card:    0 3px 5px rgba(0,0,0,0.06);
+  --shadow-chip:    0 2px 2.1px rgba(0,0,0,0.11);
+  --shadow-pop:     0 4px 4.5px rgba(0,0,0,0.26);
+
+  /* ── Spacing scale (4-pt) ───────────────────────────────── */
+  --s-1: 4px;  --s-2: 8px;   --s-3: 12px;  --s-4: 16px;
+  --s-5: 20px; --s-6: 24px;  --s-8: 32px;  --s-10: 40px;
+  --s-12: 48px; --s-16: 64px; --s-20: 80px;
+
+  /* ── Brand gradients ────────────────────────────────────── */
+  --grad-sunrise:
+      radial-gradient(circle at 30% 70%, var(--p-orange-deep) 0%, rgba(247,114,40,0) 60%),
+      radial-gradient(circle at 70% 30%, var(--p-amber) 30%, rgba(255,192,90,0) 80%),
+      linear-gradient(135deg, var(--p-amber), var(--p-orange-warm));
+  --grad-sunset:
+      radial-gradient(circle at 75% 25%, var(--p-orange-warm) 0%, var(--p-blue-mist) 100%);
+  --grad-haze:
+      linear-gradient(180deg, var(--p-blue-mist) 0%, var(--p-bg-stone) 100%);
+
+  /* ── Typography stacks ──────────────────────────────────── */
+  --font-display: "Inter Tight", "ABC Repro", -apple-system, system-ui, sans-serif;
+  --font-serif:   "Instrument Serif", "Source Serif 4", Georgia, serif;
+  --font-body:    "ABC Repro", "Inter Tight", -apple-system, system-ui, sans-serif;
+  --font-ui:      "ABC Repro", -apple-system, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Type sizes (mobile UI scale — most surfaces are 393pt phone) */
+  --t-display:   80px;   /* hero "Prompt" wordmark size */
+  --t-h1:        48px;
+  --t-h2:        24px;
+  --t-h3:        20px;
+  --t-h4:        16px;
+  --t-body:      14px;
+  --t-body-sm:   13px;
+  --t-meta:      11px;
+  --t-micro:      9px;
+
+  --lh-tight: 1.10;
+  --lh-snug:  1.28;
+  --lh-body:  1.45;
+
+  --ls-tight:  -0.030em;
+  --ls-snug:   -0.010em;
+  --ls-mono:    0.004em;
+}
+
+/* ── Semantic typography classes ───────────────────────────── */
+.t-display, h1.t-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--t-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+.t-h1, h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--t-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+.t-h2, h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--t-h2);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+.t-h3, h3 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--t-h3);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+.t-h4, h4 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--t-h4);
+  line-height: 1.10;
+  letter-spacing: var(--ls-tight);
+}
+.t-body, p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--t-body);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-snug);
+  color: var(--fg-2);
+}
+.t-meta {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--t-meta);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-snug);
+  color: var(--fg-3);
+}
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: var(--ls-mono);
+}
+.t-byline {
+  color: var(--fg-link-soft);
+  font-family: var(--font-body);
+  font-size: var(--t-body-sm);
+  letter-spacing: var(--ls-snug);
+}
