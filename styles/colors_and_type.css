@@ -1,0 +1,199 @@
+/* ============================================================
+   Prompt — Colors & Type
+   Mirrors the Flutter app's AppColours so web + app stay aligned.
+   ============================================================ */
+
+@font-face {
+  font-family: "ABC Repro";
+  src: url("../assets/fonts/ABCReproVariable-Trial.woff2") format("woff2-variations"),
+       url("../assets/fonts/ABCReproVariable-Trial.ttf")   format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap");
+
+:root {
+  /* ── Brand palette — AppColours (Flutter parity) ─────────── */
+  --skywash:      #B9C8D4;   /* daytime clarity, calm */
+  --golden-hour:  #F5C26C;   /* optimism, early evening */
+  --first-light:  #EBF3B7;   /* affirmative / payoff — "Going" pill, CTA fill */
+  --fire-light:   #F09669;   /* soft peach — gradient mids, hover tints */
+  --afterglow:    #E46D31;   /* primary brand orange — used everywhere */
+  --midnight:     #12167A;   /* depth, trust, nightlife */
+  --cloud-cover:  #D3D3D8;   /* neutral / utility balance */
+  --after-hours:  #1D0A1D;   /* mystery, late-night edge */
+
+  /* RSVP states (from AppColours) */
+  --rsvp-going:           var(--first-light);
+  --rsvp-going-on-light:  #D3E177;
+  --rsvp-invited:         var(--afterglow);
+
+  /* ── Calm pastels (UI surfaces & tags) ──────────────────── */
+  --p-blue-mist:   #B5C1D4;
+  --p-blue-sky:    #90DAEE;
+  --p-lemon-soft:  #E7FAB8;
+  --p-pink:        #F5277A;
+
+  /* ── Inks & neutrals ────────────────────────────────────── */
+  --p-ink:           #031504;
+  --p-ink-graphite:  #231F20;
+  --p-ink-soft:      #252925;
+  --p-violet-deep:   #3508D7;
+  --p-violet:        #5A5AFA;
+  --p-blue-pure:     #0000FF;
+
+  --p-white:         #FFFFFF;
+  --p-white-warm:    #FEFFFD;
+  --p-bg-paper:      #F5F5F5;
+  --p-bg-stone:      #DBDAD3;
+  --p-line-soft:     #E8E8E8;
+  --p-line:          #D3D3D8;
+  --p-line-strong:   #555555;
+
+  /* ── Semantic tokens ────────────────────────────────────── */
+  --fg-1:        var(--p-ink);
+  --fg-2:        rgba(3,21,4,0.80);
+  --fg-3:        rgba(3,21,4,0.60);
+  --fg-4:        rgba(3,21,4,0.50);
+  --fg-on-dark:  var(--p-white);
+  --fg-on-dark-2: rgba(255,255,255,0.78);
+  --fg-link:      var(--p-violet-deep);
+  --fg-link-soft: rgba(61,39,225,0.69);
+
+  --bg-base:   var(--p-white);
+  --bg-paper:  var(--p-bg-paper);
+  --bg-dark:   var(--after-hours);
+  --bg-stone:  var(--p-bg-stone);
+
+  --accent:        var(--afterglow);
+  --accent-warm:   var(--fire-light);
+  --cta-fill:      var(--first-light);
+  --status-going:  var(--p-lemon-soft);
+  --map-surface:   var(--p-blue-sky);
+
+  --border-hairline:   0.5px solid rgba(0,0,0,0.20);
+  --border-soft:       1px solid var(--p-line);
+  --border-strong:     1px solid var(--p-ink);
+
+  /* ── Radii ──────────────────────────────────────────────── */
+  --r-xs:  4px;
+  --r-sm:  9px;
+  --r-md:  12px;
+  --r-lg:  17px;
+  --r-xl:  26px;
+  --r-2xl: 36px;
+  --r-3xl: 51px;
+  --r-pill: 999px;
+
+  /* ── Shadows ────────────────────────────────────────────── */
+  --shadow-card:    0 3px 5px rgba(0,0,0,0.06);
+  --shadow-chip:    0 2px 2.1px rgba(0,0,0,0.11);
+  --shadow-pop:     0 4px 4.5px rgba(0,0,0,0.26);
+
+  /* ── Spacing scale (4-pt) ───────────────────────────────── */
+  --s-1: 4px;  --s-2: 8px;   --s-3: 12px;  --s-4: 16px;
+  --s-5: 20px; --s-6: 24px;  --s-8: 32px;  --s-10: 40px;
+  --s-12: 48px; --s-16: 64px; --s-20: 80px;
+
+  /* ── Brand gradients ────────────────────────────────────── */
+  --grad-sunrise:
+      radial-gradient(circle at 30% 70%, var(--afterglow) 0%, rgba(228,109,49,0) 60%),
+      radial-gradient(circle at 70% 30%, var(--golden-hour) 30%, rgba(245,194,108,0) 80%),
+      linear-gradient(135deg, var(--golden-hour), var(--fire-light));
+  --grad-sunset:
+      radial-gradient(circle at 75% 25%, var(--fire-light) 0%, var(--skywash) 100%);
+  --grad-haze:
+      linear-gradient(180deg, var(--skywash) 0%, var(--p-bg-stone) 100%);
+
+  /* ── Typography stacks ──────────────────────────────────── */
+  --font-display: "ABC Repro", "Inter Tight", -apple-system, system-ui, sans-serif;
+  --font-serif:   "Instrument Serif", "Source Serif 4", Georgia, serif;
+  --font-body:    "ABC Repro", "Inter Tight", -apple-system, system-ui, sans-serif;
+  --font-ui:      "ABC Repro", -apple-system, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Type sizes (mobile UI scale — most surfaces are 393pt phone) */
+  --t-display:   80px;
+  --t-h1:        48px;
+  --t-h2:        24px;
+  --t-h3:        20px;
+  --t-h4:        16px;
+  --t-body:      14px;
+  --t-body-sm:   13px;
+  --t-meta:      11px;
+  --t-micro:      9px;
+
+  --lh-tight: 1.10;
+  --lh-snug:  1.28;
+  --lh-body:  1.45;
+
+  --ls-tight:  -0.030em;
+  --ls-snug:   -0.010em;
+  --ls-mono:    0.004em;
+}
+
+/* ── Semantic typography classes ───────────────────────────── */
+.t-display, h1.t-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--t-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+.t-h1, h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--t-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+.t-h2, h2 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: var(--t-h2);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+.t-h3, h3 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--t-h3);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+.t-h4, h4 {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--t-h4);
+  line-height: 1.10;
+  letter-spacing: var(--ls-tight);
+}
+.t-body, p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--t-body);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-snug);
+  color: var(--fg-2);
+}
+.t-meta {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--t-meta);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--ls-snug);
+  color: var(--fg-3);
+}
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: 16px;
+  letter-spacing: var(--ls-mono);
+}
+.t-byline {
+  color: var(--fg-link-soft);
+  font-family: var(--font-body);
+  font-size: var(--t-body-sm);
+  letter-spacing: var(--ls-snug);
+}
