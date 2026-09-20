@@ -3,237 +3,103 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Prompt — Real life, on tap.</title>
+<title>Prompt — The social social media app</title>
+<meta name="description" content="Prompt is the social social media app. No feed, no followers, no noise — just invitations from people you actually know." />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://prompt.spencer.st/" />
+<meta property="og:title" content="Prompt — The social social media app" />
+<meta property="og:description" content="No feed, no followers, no noise — just invitations from people you actually know." />
+<meta property="og:image" content="https://prompt.spencer.st/assets/hero.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#1D0A1D" />
+
 <link rel="icon" href="assets/app-icon.png" />
+<link rel="apple-touch-icon" href="assets/app-icon.png" />
+<link rel="preload" as="image" href="assets/hero.jpg" />
 <link rel="stylesheet" href="styles/colors_and_type.css" />
 <link rel="stylesheet" href="styles/site.css" />
-<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
-<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
 </head>
 <body>
 
-<!-- ─────────────────────────── NAV ─────────────────────────── -->
-<header class="nav">
-  <div class="wrap nav-inner">
-    <a class="brand" href="#top" aria-label="Prompt">
-      <img src="assets/app-icon.png" alt="" />
-      <span class="brand-name">Prompt</span>
-    </a>
-    <div class="nav-meta">
-      <span class="tag">Beta · TestFlight</span>
-      <a class="nav-cta" href="https://testflight.apple.com/join/J6b3KQqk" target="_blank" rel="noopener">
-        <i class="ph-bold ph-apple-logo"></i>
-        <span>Join the beta</span>
-      </a>
-    </div>
-  </div>
-</header>
+<!-- ───────────────────────── HERO ───────────────────────── -->
+<main class="hero">
+  <img class="hero-bg" src="assets/hero.jpg" alt="" aria-hidden="true" />
+  <div class="hero-scrim" aria-hidden="true"></div>
 
-<!-- ─────────────────────────── HERO ─────────────────────────── -->
-<section class="hero" id="top">
-  <div class="wrap hero-grid">
+  <div class="hero-inner">
+    <a class="brand" href="/" aria-label="Prompt">
+      <img src="assets/app-icon.png" alt="" />
+      <span>Prompt</span>
+    </a>
+
     <div class="hero-copy">
-      <div class="eyebrow">— Now in public beta</div>
-      <h1 class="hero-h">Real&nbsp;life,<em>on tap.</em></h1>
-      <p class="hero-sub">Prompt is the social social media app. From a Sunday picnic to a 30th — turn loose plans into real, attended events.</p>
+      <h1>The&nbsp;social<br /><em>social media</em><br />app.</h1>
+      <p class="hero-sub">No feed. No followers. No noise. Just invitations from people you actually know.</p>
+
       <div class="cta-row">
-        <a class="cta-primary" href="https://testflight.apple.com/join/J6b3KQqk" target="_blank" rel="noopener">
-          <i class="ph-bold ph-apple-logo"></i>
-          <span>Open in TestFlight</span>
+        <!-- TODO: replace with the live App Store link once the app is approved -->
+        <a class="cta" href="APP_STORE_URL" data-appstore>
+          <i class="ph-bold ph-apple-logo" aria-hidden="true"></i>
+          <span>Download on the App&nbsp;Store</span>
         </a>
         <span class="cta-meta">iPhone · iOS 17+</span>
       </div>
     </div>
 
+    <footer class="hero-foot">
+      <span>© <span data-year>2026</span> Prompt</span>
+      <a href="https://spencer.st">spencer.st</a>
+      <a href="mailto:hello@spencer.st">Contact</a>
+    </footer>
   </div>
-</section>
+</main>
 
-<!-- ─────────────────────────── MARQUEE ─────────────────────────── -->
-<section class="marquee" aria-label="A few of the things you'll be invited to">
-  <div class="marquee-eyebrow">— A few of the things you'll be invited to</div>
-  <div class="marquee-track">
-    <span class="chip lemon"><i class="ph ph-fork-knife"></i>Eat &amp; drink</span>
-    <span class="chip"><i class="ph ph-mountains"></i>Hiking</span>
-    <span class="chip"><i class="ph ph-music-notes"></i>Dancing</span>
-    <span class="chip golden"><i class="ph ph-sun-horizon"></i>Beach day</span>
-    <span class="chip solid"><i class="ph ph-cake"></i>Birthday</span>
-    <span class="chip"><i class="ph ph-book-open"></i>Book club</span>
-    <span class="chip"><i class="ph ph-wine"></i>Wine bar</span>
-    <span class="chip"><i class="ph ph-guitar"></i>A gig</span>
-    <span class="chip lemon"><i class="ph ph-coffee"></i>Brunch</span>
-    <span class="chip"><i class="ph ph-tent"></i>Camping</span>
-    <span class="chip"><i class="ph ph-film-reel"></i>Movie night</span>
-    <span class="chip"><i class="ph ph-game-controller"></i>Game night</span>
-    <span class="chip"><i class="ph ph-person-simple-run"></i>Run club</span>
-    <span class="chip"><i class="ph ph-flower-lotus"></i>Yoga</span>
-    <span class="chip solid"><i class="ph ph-confetti"></i>Just because</span>
-    <!-- duplicate for seamless loop -->
-    <span class="chip lemon"><i class="ph ph-fork-knife"></i>Eat &amp; drink</span>
-    <span class="chip"><i class="ph ph-mountains"></i>Hiking</span>
-    <span class="chip"><i class="ph ph-music-notes"></i>Dancing</span>
-    <span class="chip golden"><i class="ph ph-sun-horizon"></i>Beach day</span>
-    <span class="chip solid"><i class="ph ph-cake"></i>Birthday</span>
-    <span class="chip"><i class="ph ph-book-open"></i>Book club</span>
-    <span class="chip"><i class="ph ph-wine"></i>Wine bar</span>
-    <span class="chip"><i class="ph ph-guitar"></i>A gig</span>
-    <span class="chip lemon"><i class="ph ph-coffee"></i>Brunch</span>
-    <span class="chip"><i class="ph ph-tent"></i>Camping</span>
-    <span class="chip"><i class="ph ph-film-reel"></i>Movie night</span>
-    <span class="chip"><i class="ph ph-game-controller"></i>Game night</span>
-    <span class="chip"><i class="ph ph-person-simple-run"></i>Run club</span>
-    <span class="chip"><i class="ph ph-flower-lotus"></i>Yoga</span>
-    <span class="chip solid"><i class="ph ph-confetti"></i>Just because</span>
-  </div>
-</section>
-
-<!-- ─────────────────────────── MANIFESTO ─────────────────────────── -->
-<section class="manifesto">
-  <div class="wrap manifesto-grid">
-    <div>
-      <span class="quote-mark">"</span>
-      <h2>No&nbsp;ads.<br/>No algorithm.<br/><em>No noise.</em></h2>
-    </div>
-    <div class="manifesto-body">
-      <div class="eyebrow">— What it is</div>
-      <p style="margin-top: 32px;">A soft tool for turning loose plans — a Sunday picnic, drinks after work, a 30th — into real, attended events.</p>
-      <p>No feed. No followers. No follower count. It reads like a text from the friend organising the night, not a marketing email about it.</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- ─────────────────────────── FEATURES ─────────────────────────── -->
-<section class="features">
+<!-- ───────────────────────── SCREENS ───────────────────────── -->
+<section class="screens" aria-label="Inside the app">
   <div class="wrap">
-    <div class="features-header">
-      <div class="eyebrow">— What's inside</div>
-      <h2>Plans, not <em>posts.</em></h2>
-    </div>
-    <div class="feature-grid">
-      <div class="feature">
-        <div class="num">01</div>
-        <h3>A warm list of invitations.</h3>
-        <p>Your home screen is people you actually know, sending you things you might actually go to. That's it.</p>
-      </div>
-      <div class="feature">
-        <div class="num">02</div>
-        <h3>Real event detail.</h3>
-        <p>Host, date, location with map, comments, photos. Everything you'd text about, in one place.</p>
-      </div>
-      <div class="feature">
-        <div class="num">03</div>
-        <h3>Quiet by default.</h3>
-        <p>No feed to refresh, no notifications for things you didn't ask for. If you don't add friends, the app is silent.</p>
-      </div>
+    <h2 class="screens-h">A quiet list of <em>invitations.</em></h2>
+    <div class="screens-row">
+      <figure class="phone">
+        <img src="assets/screens/01.png" alt="The Prompt home screen, a list of upcoming invitations" />
+      </figure>
+      <figure class="phone">
+        <img src="assets/screens/02.png" alt="A Prompt event with host, time, place and who's going" />
+      </figure>
+      <figure class="phone">
+        <img src="assets/screens/03.png" alt="Replying to an invitation in Prompt" />
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- ─────────────────────────── VOICE ─────────────────────────── -->
-<section class="voice">
-  <div class="wrap">
-    <div class="voice-eyebrow eyebrow">— How it sounds</div>
-    <h2>Like a text from the <em>friend</em><br/>organising the night.</h2>
-    <div class="voice-stage" aria-hidden="true">
-      <div class="bubble b1 left-tail">
-        <span class="who">Lou · 19:04</span>
-        Yay sounds fun x
-      </div>
-      <div class="bubble b2 right-tail lemon">
-        <span class="who">Sami · 19:06</span>
-        I'll be there after work ~8
-      </div>
-      <div class="bubble b3 left-tail">
-        <span class="who">Margot · 19:08</span>
-        Point Chev picnic — just 'cos
-      </div>
-      <div class="bubble b4 right-tail firelight">
-        <span class="who">You · 19:10</span>
-        Hello friends!
-      </div>
-      <div class="bubble b5 left-tail golden">
-        <span class="who">Tom · 19:12</span>
-        Bringing a sourdough &amp; some wine
-      </div>
-      <div class="bubble b6 right-tail">
-        <span class="who">Anaïs · 19:14</span>
-        Bisous xx
-      </div>
-    </div>
-  </div>
-</section>
+<script>
+  document.querySelector('[data-year]').textContent = new Date().getFullYear();
 
-<!-- ─────────────────────────── FAQ ─────────────────────────── -->
-<section class="faq">
-  <div class="wrap faq-grid">
-    <div>
-      <div class="eyebrow">— Small print</div>
-      <h3 class="faq-title">Quick <em>questions.</em></h3>
-    </div>
-    <div class="qa-list">
-      <div class="qa">
-        <div class="q-num">01</div>
-        <div class="qa-body">
-          <div class="q">Is it free?</div>
-          <div class="a">Yes. Free to download, free to use. The beta is for invited testers via Apple's TestFlight programme — there's a limited number of seats while we're still polishing.</div>
-        </div>
-      </div>
-      <div class="qa">
-        <div class="q-num">02</div>
-        <div class="qa-body">
-          <div class="q">iOS only?</div>
-          <div class="a">For now, yes. iOS 17+ on iPhone. Android and a desktop view are on the roadmap — but we're focused on getting the iPhone experience right first.</div>
-        </div>
-      </div>
-      <div class="qa">
-        <div class="q-num">03</div>
-        <div class="qa-body">
-          <div class="q">Will my friends see what I'm up to?</div>
-          <div class="a">Only the ones you invite. There's no feed, no public profile, no follower count. If you don't add anyone, the app is quiet.</div>
-        </div>
-      </div>
-      <div class="qa">
-        <div class="q-num">04</div>
-        <div class="qa-body">
-          <div class="q">When's it out properly?</div>
-          <div class="a">Soon. The beta is where we sharpen the rough edges. Join, send a few invites, tell us what you think.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  // The screens section only earns its place once real screenshots are in
+  // assets/screens/. Until then, hide it rather than ship empty frames.
+  (function () {
+    var section = document.querySelector('.screens');
+    var imgs = Array.prototype.slice.call(section.querySelectorAll('.phone img'));
+    var pending = imgs.length;
+    var loaded = 0;
 
-<!-- ─────────────────────────── BIG CTA ─────────────────────────── -->
-<section class="cta-big">
-  <div class="wrap">
-    <div class="eyebrow">— Early access · No. 001</div>
-    <h2>You're<em>invited.</em></h2>
-    <p class="sub">Limited seats. Open it on your iPhone.</p>
-    <div class="cta-row">
-      <a class="cta-primary" href="https://testflight.apple.com/join/J6b3KQqk" target="_blank" rel="noopener">
-        <i class="ph-bold ph-apple-logo"></i>
-        <span>Open in TestFlight</span>
-      </a>
-      <span class="cta-meta">iOS only · Beta</span>
-    </div>
-  </div>
-</section>
+    function settle(img, ok) {
+      if (ok) { loaded++; } else { img.closest('.phone').classList.add('is-empty'); }
+      if (--pending === 0 && loaded === 0) { section.hidden = true; }
+    }
 
-<!-- ─────────────────────────── FOOTER ─────────────────────────── -->
-<footer>
-  <div class="wrap foot-inner">
-    <div class="foot-brand">
-      <img src="assets/app-icon.png" alt="" />
-      <span>Prompt &nbsp;·&nbsp; Real life, on tap.</span>
-    </div>
-    <nav class="foot-links">
-      <a href="https://testflight.apple.com/join/J6b3KQqk" target="_blank" rel="noopener">TestFlight</a>
-      <a href="/cdn-cgi/l/email-protection#39515c55555679494b5654494d17584949">Contact</a>
-      <a href="#top">Top</a>
-    </nav>
-  </div>
-</footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+    imgs.forEach(function (img) {
+      // The error may already have fired before this script ran.
+      if (img.complete) {
+        settle(img, img.naturalWidth > 0);
+      } else {
+        img.addEventListener('load', function () { settle(img, true); });
+        img.addEventListener('error', function () { settle(img, false); });
+      }
+    });
+  })();
+</script>
+</body>
 </html>

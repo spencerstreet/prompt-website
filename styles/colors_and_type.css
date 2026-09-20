@@ -3,6 +3,9 @@
    Mirrors the Flutter app's AppColours so web + app stay aligned.
    ============================================================ */
 
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap");
+
+
 @font-face {
   font-family: "ABC Repro";
   src: url("../assets/fonts/ABCReproVariable-Trial.woff2") format("woff2-variations"),
@@ -12,7 +15,14 @@
   font-display: swap;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap");
+/* The variable file is roman only, so the one italic we use ships as a static cut. */
+@font-face {
+  font-family: "ABC Repro";
+  src: url("../assets/fonts/ABCRepro-MediumItalic-Trial.woff2") format("woff2");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
 
 :root {
   /* ── Brand palette — AppColours (Flutter parity) ─────────── */
@@ -109,7 +119,7 @@
 
   /* ── Typography stacks ──────────────────────────────────── */
   --font-display: "ABC Repro", "Inter Tight", -apple-system, system-ui, sans-serif;
-  --font-serif:   "Instrument Serif", "Source Serif 4", Georgia, serif;
+  --font-serif:   "Source Serif 4", Georgia, serif;   /* unused — no serif in the app */
   --font-body:    "ABC Repro", "Inter Tight", -apple-system, system-ui, sans-serif;
   --font-ui:      "ABC Repro", -apple-system, system-ui, sans-serif;
   --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
