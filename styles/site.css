@@ -54,20 +54,16 @@ em { font-style: normal; }
   object-position: 60% 50%;
 }
 
-/* Warms the photo toward the brand and buys contrast for the copy. */
+/* Neutral, so the photo keeps its own colour; this only buys contrast. */
 .hero-scrim {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
-    linear-gradient(180deg,
-      rgba(29,10,29,0.72) 0%,
-      rgba(29,10,29,0.38) 34%,
-      rgba(29,10,29,0.78) 78%,
-      rgba(29,10,29,0.94) 100%),
-    linear-gradient(120deg,
-      rgba(228,109,49,0.26) 0%,
-      rgba(228,109,49,0) 58%);
+  background: linear-gradient(180deg,
+    rgba(0,0,0,0.72) 0%,
+    rgba(0,0,0,0.38) 34%,
+    rgba(0,0,0,0.78) 78%,
+    rgba(0,0,0,0.94) 100%);
 }
 
 .hero-inner {
@@ -221,22 +217,21 @@ em { font-style: normal; }
   gap: clamp(16px, 3vw, 40px);
 }
 
+/* The screenshots are device mockups on transparency, so the frame and the
+   rounded corners come from the image. PNG keeps the alpha; flattening them to
+   JPEG fills the surround with a solid colour and shows as a block. */
 .phone {
   position: relative;
   margin: 0;
-  aspect-ratio: 1206 / 2622;
-  border-radius: clamp(20px, 3vw, 34px);
-  overflow: hidden;
-  background: rgba(255,255,255,0.04);
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,0.12),
-    0 24px 48px rgba(0,0,0,0.45);
+  aspect-ratio: 1080 / 2198;
 }
 
 .phone img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  /* Follows the handset silhouette, unlike a box-shadow. */
+  filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55));
 }
 
 /* Until real screenshots land, show a calm placeholder rather than a broken icon. */
@@ -248,6 +243,7 @@ em { font-style: normal; }
   inset: 0;
   display: grid;
   place-items: center;
+  border-radius: clamp(20px, 3vw, 34px);
   font-family: var(--font-mono);
   font-size: var(--t-meta);
   letter-spacing: 0.08em;

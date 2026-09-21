@@ -74,7 +74,7 @@
 
   --bg-base:   var(--p-white);
   --bg-paper:  var(--p-bg-paper);
-  --bg-dark:   var(--after-hours);
+  --bg-dark:   #0B0A0B;   /* near-black; --after-hours reads plum against the hero */
   --bg-stone:  var(--p-bg-stone);
 
   --accent:        var(--afterglow);
