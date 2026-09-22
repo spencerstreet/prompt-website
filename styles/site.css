@@ -316,3 +316,19 @@ footer {
 
 .foot-links a { transition: color 140ms ease; }
 .foot-links a:hover { color: var(--golden-hour); }
+
+/* ── Language switcher ─────────────────────────────────────── */
+
+.lang {
+  padding: 3px 10px;
+  border: 1px solid currentColor;
+  border-radius: var(--r-pill);
+  font-size: var(--t-meta);
+  letter-spacing: 0.04em;
+  opacity: 0.7;
+  transition: opacity 140ms ease, color 140ms ease;
+}
+
+.lang:hover { opacity: 1; color: var(--golden-hour); }
+
+body.legal .lang:hover { color: var(--accent); }
