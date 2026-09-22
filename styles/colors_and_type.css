@@ -15,15 +15,6 @@
   font-display: swap;
 }
 
-/* The variable file is roman only, so the one italic we use ships as a static cut. */
-@font-face {
-  font-family: "ABC Repro";
-  src: url("../assets/fonts/ABCRepro-MediumItalic-Trial.woff2") format("woff2");
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
-}
-
 :root {
   /* ── Brand palette — AppColours (Flutter parity) ─────────── */
   --skywash:      #B9C8D4;   /* daytime clarity, calm */
