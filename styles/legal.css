@@ -1,7 +1,20 @@
 /* ============================================================
    Prompt — legal documents
    Long-form reading layout on the tokens in colors_and_type.css.
+   These pages run dark-on-light, unlike the landing page, so the
+   .legal class re-grounds body and the shared header/footer.
    ============================================================ */
+
+body.legal {
+  background: var(--p-white-warm);
+  color: var(--fg-1);
+}
+
+body.legal .brand { color: var(--fg-1); }
+
+body.legal footer { border-top-color: var(--p-line); }
+body.legal .foot-inner { color: var(--fg-3); }
+body.legal .foot-links a:hover { color: var(--accent); }
 
 .legal-wrap {
   width: 100%;
@@ -13,7 +26,7 @@
 /* ── Masthead ──────────────────────────────────────────────── */
 
 .legal-top {
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 1px solid var(--p-line);
 }
 
 .legal-top-inner {
@@ -30,11 +43,11 @@
   gap: var(--s-2);
   font-size: var(--t-body-sm);
   letter-spacing: var(--ls-snug);
-  color: rgba(255,255,255,0.58);
+  color: var(--fg-3);
   transition: color 140ms ease;
 }
 
-.back:hover { color: var(--golden-hour); }
+.back:hover { color: var(--accent); }
 
 /* ── Title block ───────────────────────────────────────────── */
 
@@ -49,10 +62,8 @@
   font-size: clamp(38px, 7vw, 68px);
   line-height: 0.98;
   letter-spacing: -0.035em;
-  color: var(--fg-on-dark);
+  color: var(--fg-1);
 }
-
-.legal-head h1 em { font-style: italic; color: var(--golden-hour); }
 
 .legal-meta {
   display: flex;
@@ -60,12 +71,12 @@
   gap: var(--s-2) var(--s-6);
   margin-top: var(--s-6);
   padding-top: var(--s-5);
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid var(--p-line);
   font-family: var(--font-mono);
   font-size: var(--t-meta);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.52);
+  color: var(--fg-3);
 }
 
 .legal-intro {
@@ -73,7 +84,7 @@
   margin: var(--s-6) 0 0;
   font-size: 17px;
   line-height: var(--lh-body);
-  color: var(--fg-on-dark-2);
+  color: var(--fg-2);
 }
 
 /* ── Contents ──────────────────────────────────────────────── */
@@ -81,9 +92,9 @@
 .toc {
   margin: 0 0 clamp(40px, 6vw, 72px);
   padding: var(--s-6);
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid var(--p-line);
   border-radius: var(--r-lg);
-  background: rgba(255,255,255,0.03);
+  background: var(--bg-paper);
 }
 
 .toc ol {
@@ -103,7 +114,7 @@
   gap: var(--s-3);
   padding: 5px 0;
   font-size: var(--t-body-sm);
-  color: var(--fg-on-dark-2);
+  color: var(--fg-2);
   transition: color 140ms ease;
 }
 
@@ -111,10 +122,10 @@
   content: counter(toc, decimal-leading-zero);
   font-family: var(--font-mono);
   font-size: var(--t-meta);
-  color: rgba(255,255,255,0.38);
+  color: var(--fg-4);
 }
 
-.toc a:hover { color: var(--golden-hour); }
+.toc a:hover { color: var(--accent); }
 
 /* ── Sections ──────────────────────────────────────────────── */
 
@@ -125,7 +136,7 @@
   scroll-margin-top: var(--s-6);
 }
 
-.sec + .sec { border-top: 1px solid rgba(255,255,255,0.10); }
+.sec + .sec { border-top: 1px solid var(--p-line-soft); }
 
 .sec-num {
   font-family: var(--font-mono);
@@ -142,7 +153,7 @@
   font-size: clamp(24px, 3.4vw, 34px);
   line-height: 1.08;
   letter-spacing: -0.03em;
-  color: var(--fg-on-dark);
+  color: var(--fg-1);
 }
 
 .sec h3 {
@@ -150,7 +161,7 @@
   font-size: var(--t-h4);
   font-weight: 500;
   letter-spacing: var(--ls-snug);
-  color: var(--fg-on-dark);
+  color: var(--fg-1);
 }
 
 .sec p,
@@ -158,7 +169,7 @@
   font-size: 16px;
   line-height: var(--lh-body);
   letter-spacing: var(--ls-snug);
-  color: var(--fg-on-dark-2);
+  color: var(--fg-2);
 }
 
 .sec p { margin: 0 0 var(--s-4); max-width: 64ch; }
@@ -187,22 +198,22 @@
   background: var(--accent);
 }
 
-.sec a { color: var(--golden-hour); text-decoration: underline; text-underline-offset: 3px; }
+.sec a { color: var(--fg-link); text-decoration: underline; text-underline-offset: 3px; }
 
-.sec strong { color: var(--fg-on-dark); font-weight: 500; }
+.sec strong { color: var(--fg-1); font-weight: 500; }
 
 /* A single emphasised statement, e.g. "we don't sell your data". */
 .callout {
   margin: var(--s-6) 0;
   padding: var(--s-5) var(--s-6);
-  border-left: 2px solid var(--cta-fill);
+  border-left: 2px solid var(--rsvp-going-on-light);
   border-radius: 0 var(--r-md) var(--r-md) 0;
-  background: rgba(235,243,183,0.07);
+  background: rgba(235,243,183,0.38);
 }
 
 .callout p:last-child { margin-bottom: 0; }
 
-.callout strong { color: var(--cta-fill); }
+.callout strong { color: var(--fg-1); }
 
 /* Third-party processors. */
 .who {
@@ -214,7 +225,7 @@
 
 .who div {
   padding: var(--s-4);
-  border: 1px solid rgba(255,255,255,0.12);
+  border: 1px solid var(--p-line);
   border-radius: var(--r-md);
 }
 
@@ -222,14 +233,14 @@
   margin-bottom: var(--s-2);
   font-weight: 500;
   font-size: var(--t-body-sm);
-  color: var(--fg-on-dark);
+  color: var(--fg-1);
 }
 
 .who dd {
   margin: 0;
   font-size: var(--t-body-sm);
   line-height: var(--lh-snug);
-  color: var(--fg-on-dark-2);
+  color: var(--fg-2);
 }
 
 /* ── Contact ───────────────────────────────────────────────── */
@@ -237,9 +248,9 @@
 .legal-contact {
   margin-top: clamp(56px, 8vw, 96px);
   padding: clamp(32px, 5vw, 48px);
-  border: 1px solid rgba(255,255,255,0.14);
+  border: 1px solid var(--p-line);
   border-radius: var(--r-xl);
-  background: rgba(255,255,255,0.03);
+  background: var(--bg-paper);
 }
 
 .legal-contact h2 {
@@ -248,24 +259,23 @@
   font-weight: 500;
   font-size: clamp(24px, 3.4vw, 32px);
   letter-spacing: -0.03em;
-  color: var(--fg-on-dark);
+  color: var(--fg-1);
 }
 
-/* Without this, p falls through to --fg-2, which is dark ink for light backgrounds. */
 .legal-contact p {
   max-width: 58ch;
   margin: 0;
   font-size: 16px;
   line-height: var(--lh-body);
   letter-spacing: var(--ls-snug);
-  color: var(--fg-on-dark-2);
+  color: var(--fg-2);
 }
 
 .legal-contact a.mail {
   display: inline-block;
   margin-top: var(--s-3);
   font-size: 18px;
-  color: var(--golden-hour);
+  color: var(--fg-link);
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -273,9 +283,9 @@
 .entity {
   margin-top: var(--s-5);
   padding-top: var(--s-4);
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid var(--p-line);
   font-size: var(--t-body-sm);
-  color: rgba(255,255,255,0.52);
+  color: var(--fg-3);
 }
 
 @media (max-width: 600px) {
