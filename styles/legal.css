@@ -34,7 +34,8 @@ body.legal .foot-links a:hover { color: var(--accent); }
   align-items: center;
   justify-content: space-between;
   gap: var(--s-4);
-  padding: var(--s-5) 0;
+  /* padding-block only — the shorthand would clear .legal-wrap's side padding. */
+  padding-block: var(--s-5);
 }
 
 .back {
@@ -52,7 +53,7 @@ body.legal .foot-links a:hover { color: var(--accent); }
 /* ── Title block ───────────────────────────────────────────── */
 
 .legal-head {
-  padding: clamp(48px, 8vw, 88px) 0 clamp(32px, 5vw, 56px);
+  padding-block: clamp(48px, 8vw, 88px) clamp(32px, 5vw, 56px);
 }
 
 .legal-head h1 {
@@ -289,6 +290,6 @@ body.legal .foot-links a:hover { color: var(--accent); }
 }
 
 @media (max-width: 600px) {
-  .legal-top-inner { padding: var(--s-4) 0; }
+  .legal-top-inner { padding-block: var(--s-4); }
   .toc { padding: var(--s-5); }
 }
