@@ -39,7 +39,7 @@
       unclear, contact us using the details at the end.
     </p>
     <div class="legal-meta">
-      <span>Last updated 21 September 2026</span>
+      <span>Last updated 1 October 2026</span>
       <span>Spencer Street Limited</span>
     </div>
   </div>
@@ -50,9 +50,11 @@
       <ol>
         <li><a href="#collect">What we collect</a></li>
         <li><a href="#use">How we use it</a></li>
+        <li><a href="#bases">Our legal bases</a></li>
         <li><a href="#shared">How it's shared</a></li>
         <li><a href="#notifications">Notifications</a></li>
-        <li><a href="#storage">Storage &amp; transfers</a></li>
+        <li><a href="#storage">Where it's stored</a></li>
+        <li><a href="#retention">How long we keep it</a></li>
         <li><a href="#rights">Your rights</a></li>
         <li><a href="#deletion">Account deletion</a></li>
         <li><a href="#children">Children</a></li>
@@ -69,6 +71,9 @@
         <li><strong>Name</strong> — used to identify you to friends.</li>
         <li><strong>Email address</strong> — used to create and secure your account.</li>
         <li><strong>Profile photo</strong> — optional; shown to your friends and on events you create or attend.</li>
+        <li><strong>Bio</strong> — optional; a short description shown on your profile.</li>
+        <li><strong>Profile location</strong> — optional; the city you choose to show on your profile, such as “Paris, France”. This is stored and visible to others. It is separate from your device location, which we do not store.</li>
+        <li><strong>Language preference</strong> — so the app and your notifications are in the right language.</li>
         <li><strong>Sign-in identifiers</strong> — if you sign in with Google or Apple, we receive a unique identifier and basic profile details from those providers.</li>
       </ul>
 
@@ -76,24 +81,47 @@
       <ul>
         <li>Events you create or attend, including titles, descriptions, dates, locations, and photos.</li>
         <li>RSVPs and invitations you send and receive.</li>
-        <li>Friend connections — the list of people you're connected to.</li>
+        <li>Friend connections, and any friend groups you create.</li>
         <li>Messages and comments you send through chat and event comments.</li>
+        <li>Events you save or hide, and the events you have viewed most recently — we keep the last 50.</li>
+        <li>Reports you submit about other people's content, and the list of people you have blocked.</li>
         <li>Notification preferences you set within the app.</li>
       </ul>
 
+      <h3>Calendar information</h3>
+      <p>
+        With your permission, Ketchup reads your device calendar to work out when you are busy.
+        We store those busy periods — <strong>start and end times only</strong> — and show them
+        to your friends so they can find a time that suits everyone. We never read, store, or
+        show event titles, descriptions, locations, or guests from your calendar. With your
+        permission we can also add events you are attending to your calendar.
+      </p>
+      <p>
+        You can grant or revoke calendar access at any time in your device settings. If you
+        revoke it, we stop syncing and delete the busy periods we hold.
+      </p>
+
       <h3>Location information</h3>
       <p>
-        With your permission, we collect your device's location to suggest events happening
-        near you. You can grant or revoke this at any time in iOS Settings. If you don't share
-        your location, you can still use Ketchup — you just won't see location-based suggestions.
+        With your permission, we use your device's location to show you how far away an event is
+        and to suggest events happening near you. Your device's precise location is used on your
+        device for this and is not stored on our servers.
+      </p>
+      <p>
+        Separately, you can set a <strong>profile location</strong> — a city, such as “Paris,
+        France”. That is stored with your profile and is visible to other people. Setting it is
+        optional, and you can change or clear it at any time.
+      </p>
+      <p>
+        You can grant or revoke location access at any time in your device settings. Ketchup
+        works without it; you will simply not see distances or nearby suggestions.
       </p>
 
       <h3>Technical information</h3>
-      <p>
-        We automatically receive some technical information when you use Ketchup, including
-        device type, operating system version, app version, crash logs, and basic usage
-        diagnostics. We use this to keep the app running reliably.
-      </p>
+      <ul>
+        <li><strong>Device and diagnostics</strong> — device type, operating system version, app version, and crash reports.</li>
+        <li><strong>Push notification token</strong> — an identifier issued by Apple or Google that lets us deliver notifications to your device.</li>
+      </ul>
     </section>
 
     <section class="sec" id="use">
@@ -114,8 +142,39 @@
       </div>
     </section>
 
-    <section class="sec" id="shared">
+    <section class="sec" id="bases">
       <div class="sec-num">Section 03</div>
+      <h2>Our legal bases.</h2>
+      <p>
+        If you are in the European Union or the United Kingdom, data protection law requires us
+        to have a legal basis for each thing we do with your information. Ours are:
+      </p>
+      <dl class="who">
+        <div>
+          <dt>Performance of a contract</dt>
+          <dd>Running your account and the core of the service: creating events, inviting friends, RSVPs, comments, chat, and the notifications that go with them.</dd>
+        </div>
+        <div>
+          <dt>Your consent</dt>
+          <dd>Location, calendar access, photos, and camera. You give this through your device's permission prompts, and you can withdraw it at any time in your device settings.</dd>
+        </div>
+        <div>
+          <dt>Legitimate interests</dt>
+          <dd>Keeping the service secure, diagnosing crashes, improving the app, and reviewing reports to keep Ketchup safe. We balance these against your rights.</dd>
+        </div>
+        <div>
+          <dt>Legal obligation</dt>
+          <dd>Responding to lawful requests, and reporting content we are required to report.</dd>
+        </div>
+      </dl>
+      <p>
+        Where we rely on your consent, withdrawing it does not affect anything we did before you
+        withdrew it.
+      </p>
+    </section>
+
+    <section class="sec" id="shared">
+      <div class="sec-num">Section 04</div>
       <h2>How information is shared.</h2>
 
       <h3>With other Ketchup users</h3>
@@ -143,6 +202,14 @@
           <dt>APNs &amp; FCM</dt>
           <dd>Used to deliver push notifications to your device.</dd>
         </div>
+        <div>
+          <dt>Google Maps Platform</dt>
+          <dd>Powers place search and map previews when you set an event location. It receives the text you type and the coordinates shown.</dd>
+        </div>
+        <div>
+          <dt>Firebase Crashlytics</dt>
+          <dd>Receives crash reports and basic device diagnostics so we can fix faults.</dd>
+        </div>
       </dl>
       <p>
         Provider privacy policies:
@@ -164,23 +231,28 @@
     </section>
 
     <section class="sec" id="notifications">
-      <div class="sec-num">Section 04</div>
+      <div class="sec-num">Section 05</div>
       <h2>Push notifications.</h2>
       <p>
         Ketchup sends push notifications about invitations, RSVPs, comments, and messages —
         delivered through FCM and APNs. You can adjust preferences inside the app or turn them
-        off in iOS Settings → Notifications → Ketchup.
+        off in your device settings.
       </p>
     </section>
 
     <section class="sec" id="storage">
-      <div class="sec-num">Section 05</div>
-      <h2>Storage &amp; international transfers.</h2>
+      <div class="sec-num">Section 06</div>
+      <h2>Where your data is stored.</h2>
       <p>
-        Spencer Street Limited is based in New Zealand. Your data is stored on Google Firebase
-        servers, which may be located in the United States or other countries where Google
-        operates. When we transfer personal data out of the UK or EEA, we rely on appropriate
-        safeguards such as Standard Contractual Clauses.
+        Spencer Street Limited is a New Zealand company. Your data is stored in the
+        <strong>European Union</strong>, on Google Cloud infrastructure in the
+        <code>europe-west1</code> region (Belgium), through Google Firebase.
+      </p>
+      <p>
+        Some of the providers we rely on may process limited data outside the EU — for example
+        Apple and Google when delivering push notifications, and Google when crash reports are
+        processed. Where personal data is transferred outside the EU or the UK, we rely on
+        appropriate safeguards such as the European Commission's Standard Contractual Clauses.
       </p>
       <p>
         We use industry-standard security measures including encryption in transit and at rest
@@ -188,12 +260,26 @@
       </p>
     </section>
 
+    <section class="sec" id="retention">
+      <div class="sec-num">Section 07</div>
+      <h2>How long we keep it.</h2>
+      <ul>
+        <li><strong>Account and profile</strong> — for as long as your account exists. Deleting your account removes it, as described in Section 09.</li>
+        <li><strong>Events, comments and messages</strong> — for as long as the account that created them exists, then as described in Section 09.</li>
+        <li><strong>Recently viewed events</strong> — the last 50 only; older entries are dropped automatically.</li>
+        <li><strong>Calendar busy times</strong> — replaced each time we sync, and deleted when you revoke calendar access or delete your account.</li>
+        <li><strong>Reports</strong> — kept after review so that we have a record of moderation decisions and can recognise repeat behaviour.</li>
+        <li><strong>Crash reports and diagnostics</strong> — kept on Google's standard Firebase Crashlytics retention schedule.</li>
+        <li><strong>Backups</strong> — deleted data can persist briefly in encrypted backups before being overwritten.</li>
+      </ul>
+    </section>
+
     <section class="sec" id="rights">
-      <div class="sec-num">Section 06</div>
+      <div class="sec-num">Section 08</div>
       <h2>Your rights and choices.</h2>
       <ul>
         <li>Access and update your profile and preferences directly in the app.</li>
-        <li>Control your location, camera, photo, and notification permissions in iOS Settings.</li>
+        <li>Control your location, calendar, camera, photo, and notification permissions in your device settings.</li>
         <li>Delete your account at any time from within the app.</li>
       </ul>
 
@@ -201,8 +287,17 @@
       <p>
         Under UK GDPR and EU GDPR, you have rights including access, rectification, erasure,
         restriction, portability, and the right to object. You may also lodge a complaint with
-        the ICO (<a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>) in
-        the UK or your national supervisory authority in the EU.
+        the ICO (<a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>) in the
+        UK, the CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>)
+        in France, or your national supervisory authority elsewhere in the EU.
+      </p>
+
+      <h3>Our EU representative</h3>
+      <p>
+        <!-- TODO: appoint an Article 27 representative and replace this block. -->
+        Under Article 27 of the GDPR we are required to appoint a representative in the European
+        Union. Ours is <strong>EU_REPRESENTATIVE_NAME, EU_REPRESENTATIVE_ADDRESS</strong>, who
+        you may contact on any matter relating to our processing of your personal data.
       </p>
 
       <h3>New Zealand</h3>
@@ -214,29 +309,51 @@
     </section>
 
     <section class="sec" id="deletion">
-      <div class="sec-num">Section 07</div>
+      <div class="sec-num">Section 09</div>
       <h2>Account deletion.</h2>
       <p>
-        You can delete your account at any time in <strong>Settings → Delete Account</strong>.
-        Deleting your account permanently removes your profile, events, RSVPs, friend
-        connections, messages, and photos from our active systems. Some information may remain
-        in encrypted backups briefly before being overwritten. Messages you sent may remain
-        visible in other users' chats.
+        You can delete your account at any time in
+        <strong>Settings → Delete Account</strong>. Some things are removed outright; others are
+        kept but detached from you, so that the people you shared them with keep their own
+        history.
+      </p>
+
+      <h3>Deleted outright</h3>
+      <ul>
+        <li>Your profile — name, email, bio, profile photo, profile location, and language preference.</li>
+        <li>Your friend connections and friend groups.</li>
+        <li>Your RSVPs, saved events, hidden events, and viewing history.</li>
+        <li>Your stored calendar busy times.</li>
+        <li>Your one-to-one chats, including the messages in them.</li>
+        <li>Notifications you sent to other people.</li>
+        <li><strong>Future events you created</strong>, along with everyone's RSVPs to them — there would be no host left to run them.</li>
+      </ul>
+
+      <h3>Kept, but anonymised</h3>
+      <ul>
+        <li><strong>Past events you hosted</strong> — kept so that the people who attended keep their history. You are shown as “Deleted account”.</li>
+        <li><strong>Comments you wrote</strong> — kept, shown as from “deleted_user”.</li>
+        <li><strong>Messages you sent in group chats</strong> — kept, so the conversation still makes sense to the others in it. You are removed from the participant list.</li>
+      </ul>
+
+      <p>
+        Deleted data may persist briefly in encrypted backups before being overwritten.
       </p>
     </section>
 
     <section class="sec" id="children">
-      <div class="sec-num">Section 08</div>
+      <div class="sec-num">Section 10</div>
       <h2>Children.</h2>
       <p>
-        Ketchup is not intended for children under 13. We do not knowingly collect personal
-        information from children. If you believe a child has provided us with personal
-        information, please contact us and we'll delete it.
+        Ketchup is for people aged <strong>16 and over</strong>. It is not intended for
+        children, and we do not knowingly collect personal information from anyone under 16.
+        If you believe someone under 16 has provided us with personal information, contact us
+        and we will delete it.
       </p>
     </section>
 
     <section class="sec" id="changes">
-      <div class="sec-num">Section 09</div>
+      <div class="sec-num">Section 11</div>
       <h2>Changes to this policy.</h2>
       <p>
         We may update this Privacy Policy from time to time. If we make material changes, we'll
