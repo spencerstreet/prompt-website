@@ -305,7 +305,9 @@ footer { border-top: 1px solid rgba(28,28,28,0.12); }
   align-items: center;
   justify-content: space-between;
   gap: var(--s-4);
-  padding: var(--s-6) var(--s-4);
+  /* The extra bottom padding keeps the links off the edge once they wrap,
+     and clears the home indicator on iOS. */
+  padding: var(--s-6) var(--s-4) calc(var(--s-10) + env(safe-area-inset-bottom));
   font-size: var(--t-body-sm);
   letter-spacing: var(--ls-snug);
   color: var(--fg-3);
