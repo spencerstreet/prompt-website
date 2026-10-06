@@ -6,7 +6,7 @@
    ============================================================ */
 
 body.legal {
-  background: var(--p-white-warm);
+  background: var(--paper);
   color: var(--fg-1);
 }
 
@@ -14,7 +14,7 @@ body.legal .brand { color: var(--fg-1); }
 
 body.legal footer { border-top-color: var(--p-line); }
 body.legal .foot-inner { color: var(--fg-3); }
-body.legal .foot-links a:hover { color: var(--accent); }
+body.legal .foot-links a:hover { color: var(--ink); }
 
 .legal-wrap {
   width: 100%;
@@ -48,7 +48,7 @@ body.legal .foot-links a:hover { color: var(--accent); }
   transition: color 140ms ease;
 }
 
-.back:hover { color: var(--accent); }
+.back:hover { color: var(--ink); }
 
 /* ── Title block ───────────────────────────────────────────── */
 
@@ -126,7 +126,7 @@ body.legal .foot-links a:hover { color: var(--accent); }
   color: var(--fg-4);
 }
 
-.toc a:hover { color: var(--accent); }
+.toc a:hover { color: var(--ink); }
 
 /* ── Sections ──────────────────────────────────────────────── */
 
@@ -199,7 +199,7 @@ body.legal .foot-links a:hover { color: var(--accent); }
   background: var(--accent);
 }
 
-.sec a { color: var(--fg-link); text-decoration: underline; text-underline-offset: 3px; }
+.sec a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
 
 .sec strong { color: var(--fg-1); font-weight: 500; }
 
@@ -276,7 +276,7 @@ body.legal .foot-links a:hover { color: var(--accent); }
   display: inline-block;
   margin-top: var(--s-3);
   font-size: 18px;
-  color: var(--fg-link);
+  color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 4px;
 }

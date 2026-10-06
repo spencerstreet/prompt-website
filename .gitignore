@@ -2,3 +2,11 @@
 
 # Source font family — only the variable file we ship lives in assets/fonts/
 ABC Repro/
+
+# Design reference exports — self-extracting bundles with assets inlined.
+# 16MB+ each, and git keeps them forever once committed.
+styles/*(standalone).html
+*(standalone).html
+
+# Full-resolution source photos — the resized copies beside them are what ship.
+assets/images/originals/

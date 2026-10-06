@@ -31,6 +31,13 @@
   --rsvp-going-on-light:  #D3E177;
   --rsvp-invited:         var(--afterglow);
 
+  /* ── Vibe — the Oct 2026 brand direction ────────────────────
+     Source of truth for the site. The AppColours block above stays
+     as-is so the Flutter parity note keeps meaning something. */
+  --golden:  #F4BD60;   /* saying yes only — RSVP, Plan, the one CTA */
+  --ink:     #1C1C1C;
+  --paper:   #FAF9F5;
+
   /* ── Calm pastels (UI surfaces & tags) ──────────────────── */
   --p-blue-mist:   #B5C1D4;
   --p-blue-sky:    #90DAEE;
@@ -54,28 +61,28 @@
   --p-line-strong:   #555555;
 
   /* ── Semantic tokens ────────────────────────────────────── */
-  --fg-1:        var(--p-ink);
-  --fg-2:        rgba(3,21,4,0.80);
-  --fg-3:        rgba(3,21,4,0.60);
-  --fg-4:        rgba(3,21,4,0.50);
+  --fg-1:        var(--ink);
+  --fg-2:        rgba(28,28,28,0.74);
+  --fg-3:        rgba(28,28,28,0.55);
+  --fg-4:        rgba(28,28,28,0.42);
   --fg-on-dark:  var(--p-white);
   --fg-on-dark-2: rgba(255,255,255,0.78);
   --fg-link:      var(--p-violet-deep);
   --fg-link-soft: rgba(61,39,225,0.69);
 
-  --bg-base:   var(--p-white);
-  --bg-paper:  var(--p-bg-paper);
+  --bg-base:   var(--paper);
+  --bg-paper:  var(--p-white);   /* cards sit white on --paper */
   --bg-dark:   #0B0A0B;   /* near-black; --after-hours reads plum against the hero */
   --bg-stone:  var(--p-bg-stone);
 
   --accent:        var(--afterglow);
   --accent-warm:   var(--fire-light);
-  --cta-fill:      var(--first-light);
+  --cta-fill:      var(--golden);
   --status-going:  var(--p-lemon-soft);
   --map-surface:   var(--p-blue-sky);
 
   --border-hairline:   0.5px solid rgba(0,0,0,0.20);
-  --border-soft:       1px solid var(--p-line);
+  --border-soft:       1px solid rgba(28,28,28,0.12);
   --border-strong:     1px solid var(--p-ink);
 
   /* ── Radii ──────────────────────────────────────────────── */

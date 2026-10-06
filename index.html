@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Catchup — The social social media app</title>
-<meta name="description" content="Catchup is the social social media app. No ads, no followers, no noise — just invitations from people you know." />
+<title>Catchup — Get friends together in real life</title>
+<meta name="description" content="Float an idea in ten seconds, see who&#39;s keen, then put the phone away. Launching first in Paris." />
 
 <link rel="alternate" hreflang="en" href="https://app.spencer.st/" />
 <link rel="alternate" hreflang="fr" href="https://app.spencer.st/fr/" />
@@ -14,15 +14,15 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://app.spencer.st/" />
 <meta property="og:locale" content="en" />
-<meta property="og:title" content="Catchup — The social social media app" />
-<meta property="og:description" content="No ads, no followers, no noise — just invitations from people you know." />
-<meta property="og:image" content="https://app.spencer.st/assets/hero.jpg" />
+<meta property="og:title" content="Catchup — Get friends together in real life" />
+<meta property="og:description" content="Float an idea in ten seconds, see who&#39;s keen, then put the phone away. Launching first in Paris." />
+<meta property="og:image" content="https://app.spencer.st/assets/images/karl-hedin-PS7SeQ-LELY-unsplash.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="theme-color" content="#1D0A1D" />
 
 <link rel="icon" href="assets/app-icon.png" />
 <link rel="apple-touch-icon" href="assets/app-icon.png" />
-<link rel="preload" as="image" href="assets/hero.jpg" />
+<link rel="preload" as="image" href="assets/images/cosmin-ursea--2HXXtL1DCo-unsplash.jpg" />
 <link rel="stylesheet" href="styles/colors_and_type.css" />
 <link rel="stylesheet" href="styles/site.css" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
@@ -30,58 +30,115 @@
 <body>
 
 <!-- ───────────────────────── HERO ───────────────────────── -->
-<main class="hero">
-  <img class="hero-bg" src="assets/hero.jpg" alt="" aria-hidden="true" />
-  <div class="hero-scrim" aria-hidden="true"></div>
-
-  <div class="hero-inner">
+<header class="top">
+  <div class="wrap top-inner">
     <a class="brand" href="/" aria-label="Catchup">
       <img src="assets/app-icon.png" alt="" />
       <span>Catchup</span>
     </a>
+  </div>
+</header>
 
-    <div class="hero-copy">
-      <h1>The&nbsp;<em>social</em><br />social media<br />app.</h1>
-      <p class="hero-sub">No ads. No followers. No noise. Just invitations from people you know.</p>
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>Get friends together in real life.</h1>
+        <p class="hero-sub">
+          Float an idea in ten seconds, see who&rsquo;s keen, then put the phone away.
+          Launching first in Paris.
+        </p>
+        <div class="cta-row">
+          <!-- iOS is TestFlight-only until the App Store listing is live. -->
+          <a class="cta" href="https://testflight.apple.com/join/J6b3KQqk" data-ios>Try it on iPhone</a>
+          <!-- Internal test: only opens for accounts on the tester list. -->
+          <a class="cta cta-alt" href="https://play.google.com/apps/internaltest/4701181817277748916" data-android>Try it on Android</a>
+        </div>
+        <p class="cta-meta">TestFlight beta · Android in testing</p>
+      </div>
 
-      <div class="cta-row">
-        <!-- TODO: replace with the live App Store link once the app is approved -->
-        <a class="cta" href="APP_STORE_URL" data-appstore>
-          <i class="ph-bold ph-apple-logo" aria-hidden="true"></i>
-          <span>Download on the App&nbsp;Store</span>
-        </a>
-        <span class="cta-meta">iPhone · iOS 17+</span>
+      <!-- Two slots until the third photo arrives; the grid takes a third as-is. -->
+      <div class="hero-shots">
+        <figure><img src="assets/images/cosmin-ursea--2HXXtL1DCo-unsplash.jpg" alt="Hands raising glasses in a toast" /></figure>
+        <figure><img src="assets/images/karl-hedin-PS7SeQ-LELY-unsplash.jpg" alt="Friends around a table by a sunlit window" /></figure>
+        <figure><img src="assets/images/kimson-doan-AZMmUy2qL6A-unsplash.jpg" alt="Friends around a fire on the beach at dusk" /></figure>
       </div>
     </div>
+  </section>
 
-    <footer class="hero-foot">
-      <span>© <span data-year>2026</span> Catchup</span>
-      <a href="/privacy/">Privacy</a>
-      <a href="/terms/">Terms</a>
-      <a href="https://spencer.st">spencer.st</a>
-      <a href="mailto:hello@spencer.st">Contact</a>
-      <a class="lang" href="/fr/" hreflang="fr" lang="fr">Français</a>
-    </footer>
-  </div>
+  <!-- ───────────────────────── HOW IT FEELS ───────────────────────── -->
+  <section class="steps">
+    <div class="wrap steps-grid">
+      <div>
+        <div class="eyebrow">How it feels to use</div>
+        <h2>Ten seconds to float it. Zero chasing after.</h2>
+      </div>
+      <ol class="step-list">
+        <li><span class="n">01</span><span>Tap Plan, type &ldquo;Ap&eacute;ro, canal, 19:00&rdquo;.</span></li>
+        <li><span class="n">02</span><span>Friends tap RSVP. You see who&rsquo;s keen.</span></li>
+        <li><span class="n">03</span><span>Location, weather and reminders are handled.</span></li>
+        <li><span class="n">04</span><span>Everyone shows up.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── IS / ISN'T ───────────────────────── -->
+  <section class="isnt">
+    <div class="wrap isnt-grid">
+      <div class="card card-yes">
+        <div class="eyebrow">Catchup is</div>
+        <ul>
+          <li>&ldquo;Anyone up for a drink at 7?&rdquo;</li>
+          <li>Spontaneous and last-minute</li>
+          <li>Small groups of people you know</li>
+          <li>Out of the app, into the room</li>
+        </ul>
+      </div>
+      <div class="card card-no">
+        <div class="eyebrow">Catchup isn&rsquo;t</div>
+        <ul>
+          <li>Another group chat</li>
+          <li>A calendar or productivity tool</li>
+          <li>Ticketed events or strangers</li>
+          <li>Feeds, streaks or FOMO</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── SCREENS ───────────────────────── -->
+  <section class="screens" aria-label="Inside the app">
+    <div class="wrap">
+      <div class="eyebrow">Inside the app</div>
+      <h2 class="screens-h">A quiet list of invitations.</h2>
+      <div class="screens-row">
+        <figure class="phone">
+          <img loading="lazy" decoding="async" src="assets/screens/home.png" alt="The Catchup home screen: a bouldering session and a canal run, each showing the host, time, place and who's going" />
+        </figure>
+        <figure class="phone">
+          <img loading="lazy" decoding="async" src="assets/screens/event_poll.png" alt="A Catchup event, Birthday drinks, showing who is going and a poll for which night works best" />
+        </figure>
+        <figure class="phone">
+          <img loading="lazy" decoding="async" src="assets/screens/comments.png" alt="An event's comments in Catchup, with friends saying what they will bring and when they will arrive" />
+        </figure>
+      </div>
+    </div>
+  </section>
 </main>
 
-<!-- ───────────────────────── SCREENS ───────────────────────── -->
-<section class="screens" aria-label="Inside the app">
-  <div class="wrap">
-    <h2 class="screens-h">A quiet list of <em>invitations.</em></h2>
-    <div class="screens-row">
-      <figure class="phone">
-        <img loading="lazy" decoding="async" src="assets/screens/home.png" alt="The Catchup home screen: a bouldering session and a canal run, each showing the host, time, place and who's going" />
-      </figure>
-      <figure class="phone">
-        <img loading="lazy" decoding="async" src="assets/screens/event_poll.png" alt="A Catchup event, Birthday drinks, showing who is going and a poll for which night works best" />
-      </figure>
-      <figure class="phone">
-        <img loading="lazy" decoding="async" src="assets/screens/comments.png" alt="An event's comments in Catchup, with friends saying what they will bring and when they will arrive" />
-      </figure>
-    </div>
+<footer>
+  <div class="wrap foot-inner">
+    <span>&copy; <span data-year>2026</span> Catchup</span>
+    <nav class="foot-links">
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/support/">Support</a>
+      <a href="https://spencer.st">spencer.st</a>
+      <a href="mailto:hello@spencer.st">Contact</a>
+      <a class="lang" href="/fr/" hreflang="fr" lang="fr">Fran&ccedil;ais</a>
+    </nav>
   </div>
-</section>
+</footer>
 
 <script>
   document.querySelector('[data-year]').textContent = new Date().getFullYear();

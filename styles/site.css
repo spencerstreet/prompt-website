@@ -1,6 +1,8 @@
 /* ============================================================
    Catchup — app.spencer.st
-   Single landing page. Tokens live in colors_and_type.css.
+   Built to the Oct 2026 vibe: warm paper, ink type, and one
+   golden colour reserved for saying yes. Tokens live in
+   colors_and_type.css.
    ============================================================ */
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -9,16 +11,14 @@ html { -webkit-text-size-adjust: 100%; }
 
 body {
   margin: 0;
-  background: var(--bg-dark);
-  color: var(--fg-on-dark);
+  background: var(--paper);
+  color: var(--ink);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
 
 img { display: block; max-width: 100%; }
-
 a { color: inherit; text-decoration: none; }
-
 em { font-style: normal; }
 
 .wrap {
@@ -29,108 +29,72 @@ em { font-style: normal; }
 }
 
 :focus-visible {
-  outline: 2px solid var(--cta-fill);
+  outline: 2px solid var(--golden);
   outline-offset: 3px;
   border-radius: var(--r-xs);
 }
 
-/* ── Hero ──────────────────────────────────────────────────── */
-
-.hero {
-  position: relative;
-  isolation: isolate;
-  min-height: 100svh;
-  display: flex;
-  overflow: hidden;
+/* Sentence-case label above a heading. */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--t-meta);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--fg-3);
 }
 
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: -2;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 60% 50%;
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 500;        /* Regular and Medium only — never heavier. */
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  text-wrap: balance;
 }
 
-/* Neutral, so the photo keeps its own colour; this only buys contrast. */
-.hero-scrim {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(180deg,
-    rgba(0,0,0,0.72) 0%,
-    rgba(0,0,0,0.38) 34%,
-    rgba(0,0,0,0.78) 78%,
-    rgba(0,0,0,0.94) 100%);
-}
+/* ── Masthead ──────────────────────────────────────────────── */
 
-.hero-inner {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: var(--s-10);
-  width: 100%;
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: var(--s-8) var(--s-4) var(--s-6);
-}
+.top-inner { padding-block: var(--s-6); }
 
-/* Brand */
 .brand {
   display: inline-flex;
   align-items: center;
   gap: var(--s-3);
-  align-self: flex-start;
   font-family: var(--font-display);
   font-weight: 500;
   font-size: var(--t-h3);
-  letter-spacing: var(--ls-tight);
-  color: var(--fg-on-dark);
+  letter-spacing: -0.02em;
+  color: var(--ink);
 }
 
-.brand img {
-  width: 34px;
-  height: 34px;
-  border-radius: 9px;
-}
+.brand img { width: 32px; height: 32px; border-radius: 8px; }
 
-/* Copy block — takes the slack so the footer sits at the bottom. */
-.hero-copy {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+/* ── Hero ──────────────────────────────────────────────────── */
+
+.hero { padding-block: clamp(16px, 2.5vw, 32px) clamp(40px, 5vw, 64px); }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
 }
 
 .hero h1 {
   margin: 0;
-  font-family: var(--font-display);
-  font-weight: 500;
-  max-width: 13ch;
-  font-size: clamp(46px, 8.4vw, 96px);
-  line-height: 0.95;
-  letter-spacing: -0.04em;
-  color: var(--fg-on-dark);
-  text-wrap: balance;
-}
-
-.hero h1 em {
-  color: var(--golden-hour);
+  max-width: 11ch;
+  font-size: clamp(44px, 6.4vw, 86px);
+  line-height: 0.98;
 }
 
 .hero-sub {
-  max-width: 46ch;
+  max-width: 38ch;
   margin: var(--s-6) 0 0;
-  max-width: 40ch;
-  font-size: clamp(16px, 2.1vw, 20px);
+  font-size: clamp(16px, 1.5vw, 19px);
   line-height: var(--lh-body);
   letter-spacing: var(--ls-snug);
-  color: var(--fg-on-dark-2);
+  color: var(--fg-2);
 }
 
-/* CTA */
 .cta-row {
   display: flex;
   flex-wrap: wrap;
@@ -139,74 +103,159 @@ em { font-style: normal; }
   margin-top: var(--s-8);
 }
 
+/* The one golden thing on the page: the yes. */
 .cta {
   display: inline-flex;
   align-items: center;
-  gap: var(--s-3);
-  padding: 16px var(--s-6);
+  padding: 15px var(--s-6);
   border-radius: var(--r-pill);
-  background: var(--cta-fill);
-  color: var(--p-ink);
+  background: var(--golden);
+  color: var(--ink);
   font-family: var(--font-ui);
   font-weight: 500;
   font-size: 16px;
   letter-spacing: var(--ls-snug);
-  box-shadow: var(--shadow-pop);
-  transition: transform 160ms ease, background-color 160ms ease;
+  transition: transform 160ms ease, filter 160ms ease;
 }
 
-.cta i { font-size: 20px; }
-
-.cta:hover {
-  background: var(--p-lemon-soft);
-  transform: translateY(-1px);
-}
-
+.cta:hover { filter: brightness(1.04); transform: translateY(-1px); }
 .cta:active { transform: translateY(0); }
 
+/* Two routes to the same yes. Golden marks the primary one; a second gold
+   button would spend the colour twice and flatten the hierarchy. */
+.cta-alt {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px rgba(28,28,28,0.28);
+}
+
+.cta-alt:hover { filter: none; background: rgba(28,28,28,0.04); }
+
 .cta-meta {
+  margin: var(--s-4) 0 0;
   font-family: var(--font-mono);
   font-size: var(--t-meta);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.62);
+  color: var(--fg-3);
 }
 
-/* Footer inside the hero, so the first screen is the whole story. */
-.hero-foot {
+/* Photos carry the colour, so they are never tinted or filtered. */
+.hero-shots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, clamp(104px, 11.5vw, 156px));
+  gap: var(--s-3);
+}
+
+/* Tall on the left, two stacked beside it. */
+.hero-shots figure:first-child { grid-row: span 2; }
+
+.hero-shots figure {
+  margin: 0;
+  min-height: 0;          /* grid items default to min-content, which wins otherwise */
+  overflow: hidden;
+  border-radius: var(--r-lg);
+}
+
+.hero-shots img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Steps ─────────────────────────────────────────────────── */
+
+.steps { padding-block: clamp(36px, 5vw, 64px); }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+}
+
+.steps h2 {
+  margin: var(--s-4) 0 0;
+  max-width: 14ch;
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.06;
+}
+
+.step-list { margin: 0; padding: 0; list-style: none; }
+
+.step-list li {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-6);
-  padding-top: var(--s-5);
-  border-top: 1px solid rgba(255,255,255,0.16);
-  font-size: var(--t-body-sm);
-  letter-spacing: var(--ls-snug);
-  color: rgba(255,255,255,0.58);
+  gap: var(--s-5);
+  padding: var(--s-4) 0;
+  border-top: 1px solid rgba(28,28,28,0.12);
+  font-size: 16px;
+  line-height: var(--lh-body);
+  color: var(--fg-2);
 }
 
-.hero-foot a { transition: color 140ms ease; }
-.hero-foot a:hover { color: var(--golden-hour); }
+.step-list li:last-child { border-bottom: 1px solid rgba(28,28,28,0.12); }
+
+.step-list .n {
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: var(--t-meta);
+  color: var(--fg-4);
+  padding-top: 3px;
+}
+
+/* ── Is / isn't ────────────────────────────────────────────── */
+
+.isnt { padding-bottom: clamp(48px, 7vw, 88px); }
+
+.isnt-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s-4);
+}
+
+.card {
+  padding: clamp(20px, 3vw, 32px);
+  border-radius: var(--r-xl);
+}
+
+.card ul { margin: var(--s-4) 0 0; padding: 0; list-style: none; }
+
+.card li {
+  position: relative;
+  padding: 7px 0 7px var(--s-6);
+  font-size: 16px;
+  line-height: var(--lh-snug);
+}
+
+.card li::before {
+  position: absolute;
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+/* Golden marks the yes column — the same rule as the CTA. */
+.card-yes { background: var(--golden); }
+.card-yes .eyebrow { color: rgba(28,28,28,0.62); }
+.card-yes li { color: var(--ink); }
+.card-yes li::before { content: "✓"; }
+
+.card-no {
+  background: var(--p-white);
+  border: 1px solid rgba(28,28,28,0.12);
+}
+.card-no li { color: var(--fg-2); }
+.card-no li::before { content: "✕"; color: var(--fg-4); }
 
 /* ── Screens ───────────────────────────────────────────────── */
 
-.screens {
-  padding: clamp(72px, 12vw, 140px) 0 clamp(80px, 13vw, 160px);
-  background: var(--bg-dark);
-}
+.screens { padding-bottom: clamp(64px, 10vw, 128px); }
 
 .screens-h {
-  margin: 0 0 clamp(40px, 6vw, 72px);
-  font-family: var(--font-display);
-  font-weight: 500;
-  font-size: clamp(30px, 5vw, 52px);
-  line-height: 1.04;
-  letter-spacing: -0.035em;
-  color: var(--fg-on-dark);
-  text-wrap: balance;
-}
-
-.screens-h em {
-  color: var(--golden-hour);
+  margin: var(--s-4) 0 clamp(32px, 5vw, 56px);
+  font-size: clamp(26px, 3.2vw, 40px);
+  line-height: 1.06;
 }
 
 .screens-row {
@@ -215,9 +264,7 @@ em { font-style: normal; }
   gap: clamp(16px, 3vw, 40px);
 }
 
-/* The screenshots are device mockups on transparency, so the frame and the
-   rounded corners come from the image. PNG keeps the alpha; flattening them to
-   JPEG fills the surround with a solid colour and shows as a block. */
+/* Device mockups on transparency: the frame comes from the image. */
 .phone {
   position: relative;
   margin: 0;
@@ -228,11 +275,9 @@ em { font-style: normal; }
   width: 100%;
   height: 100%;
   object-fit: contain;
-  /* Follows the handset silhouette, unlike a box-shadow. */
-  filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55));
+  filter: drop-shadow(0 18px 34px rgba(28,28,28,0.16));
 }
 
-/* Until real screenshots land, show a calm placeholder rather than a broken icon. */
 .phone.is-empty img { display: none; }
 
 .phone.is-empty::after {
@@ -242,59 +287,17 @@ em { font-style: normal; }
   display: grid;
   place-items: center;
   border-radius: clamp(20px, 3vw, 34px);
+  background: rgba(28,28,28,0.04);
   font-family: var(--font-mono);
   font-size: var(--t-meta);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.28);
-  background: var(--grad-haze);
-  background-blend-mode: overlay;
-  opacity: 0.5;
+  color: var(--fg-4);
 }
 
-/* ── Responsive ────────────────────────────────────────────── */
+/* ── Footer ────────────────────────────────────────────────── */
 
-@media (max-width: 760px) {
-  .hero-inner {
-    gap: var(--s-8);
-    padding: var(--s-6) var(--s-4) var(--s-5);
-  }
-
-  .hero-copy { max-width: none; }
-
-  .cta { width: 100%; justify-content: center; }
-  .cta-row { gap: var(--s-3); }
-  .cta-meta { width: 100%; text-align: center; }
-
-  .hero-foot { gap: var(--s-4); }
-
-  /* Three phones side by side stop reading below ~760px. */
-  .screens-row {
-    grid-template-columns: repeat(3, 68vw);
-    gap: var(--s-4);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    /* Let the row bleed to the viewport edges inside the padded wrap. */
-    margin: 0 calc(-1 * var(--s-4));
-    padding: 0 var(--s-4) var(--s-4);
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .screens-row::-webkit-scrollbar { display: none; }
-
-  .phone { scroll-snap-align: center; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { transition-duration: 0.01ms !important; }
-}
-
-/* ── Page footer (used by the legal pages) ─────────────────── */
-
-footer {
-  border-top: 1px solid rgba(255,255,255,0.12);
-}
+footer { border-top: 1px solid rgba(28,28,28,0.12); }
 
 .foot-inner {
   display: flex;
@@ -305,19 +308,12 @@ footer {
   padding: var(--s-6) var(--s-4);
   font-size: var(--t-body-sm);
   letter-spacing: var(--ls-snug);
-  color: rgba(255,255,255,0.52);
+  color: var(--fg-3);
 }
 
-.foot-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--s-5);
-}
-
+.foot-links { display: flex; flex-wrap: wrap; gap: var(--s-5); }
 .foot-links a { transition: color 140ms ease; }
-.foot-links a:hover { color: var(--golden-hour); }
-
-/* ── Language switcher ─────────────────────────────────────── */
+.foot-links a:hover { color: var(--ink); }
 
 .lang {
   padding: 3px 10px;
@@ -325,10 +321,40 @@ footer {
   border-radius: var(--r-pill);
   font-size: var(--t-meta);
   letter-spacing: 0.04em;
-  opacity: 0.7;
-  transition: opacity 140ms ease, color 140ms ease;
 }
 
-.lang:hover { opacity: 1; color: var(--golden-hour); }
+/* ── Responsive ────────────────────────────────────────────── */
 
-body.legal .lang:hover { color: var(--accent); }
+@media (max-width: 860px) {
+  .hero-grid,
+  .steps-grid { grid-template-columns: 1fr; }
+
+  .hero h1 { max-width: 14ch; }
+  .hero-shots { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .isnt-grid { grid-template-columns: 1fr; }
+
+  .cta { width: 100%; justify-content: center; }
+  .cta-meta { width: 100%; text-align: center; }
+
+  /* Three phones side by side stop reading below ~620px. */
+  .screens-row {
+    grid-template-columns: repeat(3, 68vw);
+    gap: var(--s-4);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin: 0 calc(-1 * var(--s-4));
+    padding: 0 var(--s-4) var(--s-4);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .screens-row::-webkit-scrollbar { display: none; }
+  .phone { scroll-snap-align: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition-duration: 0.01ms !important; }
+}
