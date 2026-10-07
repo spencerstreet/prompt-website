@@ -18,7 +18,7 @@ import pathlib, re, sys
 
 ROOT    = pathlib.Path(__file__).resolve().parent.parent
 SCREENS = ROOT / 'assets' / 'screens'
-EXTS    = {'.png', '.jpg', '.jpeg'}
+EXTS    = {'.png', '.jpg', '.jpeg', '.webp'}
 
 # Keyed by filename without any NN- prefix or extension.
 ALT = {
@@ -26,12 +26,23 @@ ALT = {
                      "Lancer une idée dans Catchup : choisir une randonnée, un jour et un lieu, prêt à enregistrer"),
     'event_picnic': ("A Catchup picnic at Buttes-Chaumont, with who's going, the time and a map",
                      "Un pique-nique Catchup aux Buttes-Chaumont, avec les participants, l'heure et une carte"),
+    'group':        ("A Catchup group, Paris: four members, what's coming up and the places they've been together",
+                     "Un groupe Catchup, Paris : quatre membres, les sorties à venir et les sorties déjà faites ensemble"),
     'event_run':    ("A Catchup run along the canal, with who's going, the time and a map",
                      "Un footing Catchup le long du canal, avec les participants, l'heure et une carte"),
     'chat':         ("A Catchup chat where friends settle on rooftop drinks tomorrow at 19:00",
                      "Une conversation Catchup où des amis se mettent d'accord pour un verre en rooftop demain à 19:00"),
     'memories':     ("A Catchup friend profile showing what's coming up, photos from past events and mutual friends",
                      "Un profil d'ami Catchup montrant les événements à venir, des photos et des amis en commun"),
+}
+
+# The line under each phone: a few words on what it shows, shorter than the
+# App Store captions. A screen without one gets none.
+CAPTION = {
+    'float_idea': ("Float an idea", "Lancez une idée"),
+    'group':      ("Plan with your crew", "Organisez avec votre bande"),
+    'chat':       ("Keep everyone in the loop", "Tout le monde est au courant"),
+    'memories':   ("Relive together", "Revivez ensemble"),
 }
 
 def key(path):
@@ -47,8 +58,11 @@ def figures(lang):
             alt = k.replace('_', ' ').replace('-', ' ').capitalize() + ' screen in Catchup'
             missing.append(f.name)
         src = f'assets/screens/{f.name}' if lang == 'en' else f'../assets/screens/{f.name}'
+        cap = CAPTION.get(k)
+        caption = f'          <figcaption>{cap[0 if lang == "en" else 1]}</figcaption>\n' if cap else ''
         out.append('        <figure class="phone">\n'
                    f'          <img loading="lazy" decoding="async" src="{src}" alt="{alt}" />\n'
+                   f'{caption}'
                    '        </figure>')
     return '\n'.join(out), missing
 

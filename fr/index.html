@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Catchup — Retrouvez vos amis pour de vrai</title>
-<meta name="description" content="Lancez une idée en quelques secondes, voyez qui est de la partie, puis rangez votre téléphone." />
+<meta name="description" content="Lancez une idée en quelques secondes, rangez votre téléphone, et découvrez qui est de la partie." />
 
 <link rel="alternate" hreflang="en" href="https://app.spencer.st/" />
 <link rel="alternate" hreflang="fr" href="https://app.spencer.st/fr/" />
@@ -17,21 +17,21 @@
 <meta property="og:locale" content="fr_FR" />
 <meta property="og:locale:alternate" content="en_GB" />
 <meta property="og:title" content="Catchup — Retrouvez vos amis pour de vrai" />
-<meta property="og:description" content="Lancez une idée en quelques secondes, voyez qui est de la partie, puis rangez votre téléphone." />
+<meta property="og:description" content="Lancez une idée en quelques secondes, rangez votre téléphone, et découvrez qui est de la partie." />
 <meta property="og:image" content="https://app.spencer.st/assets/og.jpg" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property="og:image:alt" content="Des amis attabl&#233;s pr&#232;s d&#39;une fen&#234;tre ensoleill&#233;e" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Catchup — Retrouvez vos amis pour de vrai" />
-<meta name="twitter:description" content="Lancez une idée en quelques secondes, voyez qui est de la partie, puis rangez votre téléphone." />
+<meta name="twitter:description" content="Lancez une idée en quelques secondes, rangez votre téléphone, et découvrez qui est de la partie." />
 <meta name="twitter:image" content="https://app.spencer.st/assets/og.jpg" />
 <meta name="twitter:image:alt" content="Des amis attabl&#233;s pr&#232;s d&#39;une fen&#234;tre ensoleill&#233;e" />
 <meta name="theme-color" content="#FAF9F5" />
 
 <link rel="icon" href="../assets/app-icon.png" />
 <link rel="apple-touch-icon" href="../assets/app-icon.png" />
-<link rel="preload" as="image" href="../assets/images/cosmin-ursea--2HXXtL1DCo-unsplash.jpg" />
+<link rel="preload" as="image" href="../assets/hero-picnic.webp" />
 <link rel="stylesheet" href="../styles/colors_and_type.css" />
 <link rel="stylesheet" href="../styles/site.css" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css" />
@@ -53,7 +53,7 @@
       <div class="hero-copy">
         <h1>Retrouvez vos amis pour de vrai.</h1>
         <p class="hero-sub">
-          Lancez une id&eacute;e en quelques secondes, voyez qui est de la partie, puis rangez votre t&eacute;l&eacute;phone.
+          Lancez une id&eacute;e en quelques secondes, rangez votre t&eacute;l&eacute;phone, et d&eacute;couvrez qui est de la partie.
         </p>
         <div class="cta-row">
           <!-- iOS passe par TestFlight tant que la fiche App Store n&rsquo;est pas publi&eacute;e. -->
@@ -64,18 +64,17 @@
         <p class="cta-meta">B&ecirc;ta TestFlight · Android en test</p>
       </div>
 
-      <div class="hero-shots">
-        <figure><img src="../assets/images/cosmin-ursea--2HXXtL1DCo-unsplash.jpg" alt="Des mains qui l&egrave;vent leur verre pour trinquer" /></figure>
-        <figure><img src="../assets/images/karl-hedin-PS7SeQ-LELY-unsplash.jpg" alt="Des amis attabl&eacute;s pr&egrave;s d&rsquo;une fen&ecirc;tre ensoleill&eacute;e" /></figure>
-        <figure><img src="../assets/images/kimson-doan-AZMmUy2qL6A-unsplash.jpg" alt="Des amis autour d&rsquo;un feu sur la plage au cr&eacute;puscule" /></figure>
-      </div>
+      <!-- The product, first: one event, and who&rsquo;s in. -->
+      <figure class="phone hero-phone">
+        <img src="../assets/hero-picnic.webp" alt="Un pique-nique Catchup aux Buttes-Chaumont : cinq participants, dont trois amis, avec l&rsquo;heure et une carte" fetchpriority="high" />
+      </figure>
     </div>
   </section>
   <section class="steps">
     <div class="wrap steps-grid">
       <div>
         <div class="eyebrow">&Agrave; l&rsquo;usage</div>
-        <h2>Quelques secondes pour lancer l&rsquo;id&eacute;e. Z&eacute;ro relance.</h2>
+        <h2>T&acirc;tez le terrain. Z&eacute;ro relance.</h2>
       </div>
       <ol class="step-list">
         <li>Choisissez quoi faire : un verre, un footing, un d&icirc;ner.</li>
@@ -88,23 +87,24 @@
   <section class="screens" aria-label="Dans l&rsquo;application">
     <div class="wrap">
       <div class="eyebrow">Dans l&rsquo;application</div>
-      <h2 class="screens-h">Une liste tranquille d&rsquo;invitations.</h2>
+      <h2 class="screens-h">D&rsquo;une id&eacute;e en l&rsquo;air &agrave; de vrais moments ensemble.</h2>
       <div class="screens-row">
         <!-- screens:start -->
         <figure class="phone">
-          <img loading="lazy" decoding="async" src="../assets/screens/01-float_idea.jpg" alt="Lancer une idée dans Catchup : choisir une randonnée, un jour et un lieu, prêt à enregistrer" />
+          <img loading="lazy" decoding="async" src="../assets/screens/01-float_idea.webp" alt="Lancer une idée dans Catchup : choisir une randonnée, un jour et un lieu, prêt à enregistrer" />
+          <figcaption>Lancez une idée</figcaption>
         </figure>
         <figure class="phone">
-          <img loading="lazy" decoding="async" src="../assets/screens/02-event_picnic.jpg" alt="Un pique-nique Catchup aux Buttes-Chaumont, avec les participants, l'heure et une carte" />
+          <img loading="lazy" decoding="async" src="../assets/screens/02-group.webp" alt="Un groupe Catchup, Paris : quatre membres, les sorties à venir et les sorties déjà faites ensemble" />
+          <figcaption>Organisez avec votre bande</figcaption>
         </figure>
         <figure class="phone">
-          <img loading="lazy" decoding="async" src="../assets/screens/03-event_run.jpg" alt="Un footing Catchup le long du canal, avec les participants, l'heure et une carte" />
+          <img loading="lazy" decoding="async" src="../assets/screens/03-chat.webp" alt="Une conversation Catchup où des amis se mettent d'accord pour un verre en rooftop demain à 19:00" />
+          <figcaption>Tout le monde est au courant</figcaption>
         </figure>
         <figure class="phone">
-          <img loading="lazy" decoding="async" src="../assets/screens/04-chat.jpg" alt="Une conversation Catchup où des amis se mettent d'accord pour un verre en rooftop demain à 19:00" />
-        </figure>
-        <figure class="phone">
-          <img loading="lazy" decoding="async" src="../assets/screens/05-memories.jpg" alt="Un profil d'ami Catchup montrant les événements à venir, des photos et des amis en commun" />
+          <img loading="lazy" decoding="async" src="../assets/screens/04-memories.webp" alt="Un profil d'ami Catchup montrant les événements à venir, des photos et des amis en commun" />
+          <figcaption>Revivez ensemble</figcaption>
         </figure>
       <!-- screens:end -->
       </div>
