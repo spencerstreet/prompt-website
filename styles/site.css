@@ -200,7 +200,9 @@ h1, h2 {
   content: "";
   position: absolute;
   left: 0;
-  top: 27px;
+  /* Centred on the first line: pad-top + half a line - half the dot.
+     Derived rather than hard-coded, so it survives a type-size change. */
+  top: calc(var(--s-4) + 1em * var(--lh-body) / 2 - 2.5px);
   width: 5px;
   height: 5px;
   border-radius: 50%;
@@ -234,8 +236,9 @@ h1, h2 {
 .card li::before {
   position: absolute;
   left: 0;
-  font-family: var(--font-body);
-  font-size: 13px;
+  top: 7px;                      /* = the li's padding-top */
+  font-size: inherit;
+  line-height: var(--lh-snug);   /* same line box as the text beside it */
 }
 
 /* Golden marks the yes column — the same rule as the CTA. */
