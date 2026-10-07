@@ -73,7 +73,7 @@ body.legal .foot-links a:hover { color: var(--ink); }
   margin-top: var(--s-6);
   padding-top: var(--s-5);
   border-top: 1px solid var(--p-line);
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--t-meta);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -121,7 +121,7 @@ body.legal .foot-links a:hover { color: var(--ink); }
 
 .toc a::before {
   content: counter(toc, decimal-leading-zero);
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--t-meta);
   color: var(--fg-4);
 }
@@ -140,7 +140,7 @@ body.legal .foot-links a:hover { color: var(--ink); }
 .sec + .sec { border-top: 1px solid var(--p-line-soft); }
 
 .sec-num {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--t-meta);
   letter-spacing: 0.10em;
   text-transform: uppercase;

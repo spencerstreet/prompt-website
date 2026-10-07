@@ -36,7 +36,7 @@ em { font-style: normal; }
 
 /* Sentence-case label above a heading. */
 .eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--t-meta);
   letter-spacing: 0.10em;
   text-transform: uppercase;
@@ -133,7 +133,7 @@ h1, h2 {
 
 .cta-meta {
   margin: var(--s-4) 0 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--t-meta);
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -185,9 +185,8 @@ h1, h2 {
 .step-list { margin: 0; padding: 0; list-style: none; }
 
 .step-list li {
-  display: flex;
-  gap: var(--s-5);
-  padding: var(--s-4) 0;
+  position: relative;
+  padding: var(--s-4) 0 var(--s-4) var(--s-6);
   border-top: 1px solid rgba(28,28,28,0.12);
   font-size: 16px;
   line-height: var(--lh-body);
@@ -196,12 +195,16 @@ h1, h2 {
 
 .step-list li:last-child { border-bottom: 1px solid rgba(28,28,28,0.12); }
 
-.step-list .n {
-  flex: none;
-  font-family: var(--font-mono);
-  font-size: var(--t-meta);
-  color: var(--fg-4);
-  padding-top: 3px;
+/* A quiet marker: golden stays reserved for saying yes. */
+.step-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 27px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(28,28,28,0.32);
 }
 
 /* ── Is / isn't ────────────────────────────────────────────── */
@@ -231,7 +234,7 @@ h1, h2 {
 .card li::before {
   position: absolute;
   left: 0;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 13px;
 }
 
@@ -260,8 +263,8 @@ h1, h2 {
 
 .screens-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(16px, 3vw, 40px);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: clamp(14px, 2vw, 28px);
 }
 
 /* Device mockups on transparency: the frame comes from the image. */
@@ -288,7 +291,7 @@ h1, h2 {
   place-items: center;
   border-radius: clamp(20px, 3vw, 34px);
   background: rgba(28,28,28,0.04);
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: var(--t-meta);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -343,7 +346,9 @@ footer { border-top: 1px solid rgba(28,28,28,0.12); }
 
   /* Three phones side by side stop reading below ~620px. */
   .screens-row {
-    grid-template-columns: repeat(3, 68vw);
+    grid-auto-flow: column;
+    grid-auto-columns: 68vw;
+    grid-template-columns: none;
     gap: var(--s-4);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
