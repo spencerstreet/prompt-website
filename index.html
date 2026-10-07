@@ -202,7 +202,9 @@
   // Share button: the native sheet where it exists, clipboard as the fallback.
   document.querySelectorAll('[data-share]').forEach(function (btn) {
     btn.addEventListener('click', function () {
-      var url = window.location.href;
+      // The canonical address: no #anchor or ?utm= picked up on the way in.
+      var canonical = document.querySelector('link[rel="canonical"]');
+      var url = canonical ? canonical.href : window.location.href;
       if (navigator.share) {
         navigator.share({ title: 'Catchup', url: url }).catch(function () {});
         return;
