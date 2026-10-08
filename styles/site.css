@@ -328,7 +328,7 @@ footer { border-top: 1px solid rgba(28,28,28,0.12); }
 /* The home page's footer: columns, then a bar. */
 .foot-grid {
   display: grid;
-  grid-template-columns: 2fr repeat(3, minmax(0, 1fr));
+  grid-template-columns: 2fr repeat(4, minmax(0, 1fr));
   gap: var(--s-8);
   padding-block: var(--s-10) var(--s-8);
 }
@@ -374,7 +374,7 @@ footer { border-top: 1px solid rgba(28,28,28,0.12); }
   .feature:nth-of-type(even) .feature-copy { order: 0; }
   .feature .phone { width: min(72%, 280px); }
 
-  .foot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .foot-brand { grid-column: 1 / -1; }
 }
 
@@ -442,12 +442,13 @@ button.cta:disabled { cursor: default; opacity: 1; }
    646 x 250 PNG holds a 564 x 168 pill inset by 41px, so matching the file
    heights leaves its pill 33% short. Scale Google by 250/168 and crop the
    41px back off, and the two pills end up identical. */
-.cta-row { --badge-h: clamp(44px, 4.2vw, 52px); }
+.cta-row { --badge-h: clamp(48px, 4.8vw, 60px); }
 
+/* No border-radius or overflow here: both badges ship with their own
+   rounded corners, and clipping them crops the ends — which reads as the
+   badge being too narrow. */
 .badge {
   display: inline-flex;
-  overflow: hidden;
-  border-radius: var(--r-pill);
   transition: opacity 140ms ease, transform 140ms ease;
 }
 
