@@ -70,13 +70,45 @@ h1, h2 {
 
 /* ── Hero ──────────────────────────────────────────────────── */
 
-.hero { padding-block: clamp(16px, 2.5vw, 32px) clamp(40px, 5vw, 64px); }
+/* A full-bleed photo with the masthead and headline over it (after
+   AllTrails). The shade is darkest at the bottom, where the words are. */
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: min(92vh, 860px);
+  color: var(--p-white);
+}
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
-  gap: clamp(32px, 5vw, 72px);
-  align-items: start;
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 40%;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(to top,
+    rgba(12,10,12,0.72) 0%, rgba(12,10,12,0.38) 45%, rgba(12,10,12,0.18) 75%, rgba(12,10,12,0.32) 100%);
+}
+
+.hero .brand { color: var(--p-white); }
+
+.hero-inner {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s-8);
+  padding-block: var(--s-10) clamp(40px, 6vw, 72px);
 }
 
 .hero h1 {
@@ -84,6 +116,7 @@ h1, h2 {
   max-width: 11ch;
   font-size: clamp(44px, 6.4vw, 86px);
   line-height: 0.98;
+  color: var(--p-white);
 }
 
 .hero-sub {
@@ -92,7 +125,7 @@ h1, h2 {
   font-size: clamp(16px, 1.5vw, 19px);
   line-height: var(--lh-body);
   letter-spacing: var(--ls-snug);
-  color: var(--fg-2);
+  color: var(--fg-on-dark-2);
 }
 
 .cta-row {
@@ -131,6 +164,9 @@ h1, h2 {
 
 .cta-alt:hover { filter: none; background: rgba(28,28,28,0.04); }
 
+.hero .cta-alt { color: var(--p-white); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6); }
+.hero .cta-alt:hover { background: rgba(255,255,255,0.12); }
+
 .cta-meta {
   margin: var(--s-4) 0 0;
   font-family: var(--font-body);
@@ -140,57 +176,86 @@ h1, h2 {
   color: var(--fg-3);
 }
 
-/* One phone beside the headline: the product before anything else. The
-   frame is in the image (transparent round it), as in the screens row. */
-.hero-phone {
-  justify-self: center;
-  align-self: center;
-  width: min(100%, 320px);
+.hero .cta-meta { color: rgba(255,255,255,0.7); }
+
+/* Scan to install — desktop only (hidden below 861px). */
+/* Sits at the end of the CTA row, behind a hairline, so it reads as part of
+   the same band rather than floating. Paper rather than #fff: pure white was
+   the brightest thing on the page and out-shouted the button. */
+.qr {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  max-width: 230px;
+  margin-left: var(--s-3);
+  padding-left: var(--s-5);
+  border-left: 1px solid rgba(255,255,255,0.28);
+  color: rgba(255,255,255,0.78);
+  font-size: var(--t-body-sm);
+  line-height: var(--lh-snug);
 }
 
-/* ── Steps ─────────────────────────────────────────────────── */
-
-.steps { padding-block: clamp(36px, 5vw, 64px); }
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-  gap: clamp(28px, 5vw, 72px);
-  align-items: start;
+.qr img {
+  padding: 6px;
+  border-radius: var(--r-sm);
+  background: var(--paper);
 }
 
-.steps h2 {
-  margin: var(--s-4) 0 0;
-  max-width: 14ch;
+.qr img { width: 76px; height: 76px; }
+
+/* ── Features ──────────────────────────────────────────────── */
+
+/* One row per screen: a few words, then the phone; sides alternate. */
+.features { padding-block: clamp(56px, 8vw, 112px) clamp(24px, 4vw, 48px); }
+
+.features-h {
+  margin: var(--s-4) 0 clamp(24px, 4vw, 40px);
+  max-width: 20ch;
   font-size: clamp(26px, 3.2vw, 40px);
   line-height: 1.06;
 }
 
-.step-list { margin: 0; padding: 0; list-style: none; }
-
-.step-list li {
-  position: relative;
-  padding: var(--s-4) 0 var(--s-4) var(--s-6);
+.feature {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  padding-block: clamp(28px, 4vw, 56px);
   border-top: 1px solid rgba(28,28,28,0.12);
-  font-size: 16px;
+}
+
+.feature:nth-of-type(even) .feature-copy { order: 2; }
+
+.feature h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(26px, 3vw, 38px);
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+}
+
+.feature p {
+  max-width: 34ch;
+  margin: var(--s-4) 0 0;
+  font-size: clamp(16px, 1.4vw, 18px);
   line-height: var(--lh-body);
+  letter-spacing: var(--ls-snug);
   color: var(--fg-2);
 }
 
-.step-list li:last-child { border-bottom: 1px solid rgba(28,28,28,0.12); }
+.feature .phone { justify-self: center; width: min(100%, 300px); }
 
-/* A quiet marker: golden stays reserved for saying yes. */
-.step-list li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  /* Centred on the first line: pad-top + half a line - half the dot.
-     Derived rather than hard-coded, so it survives a type-size change. */
-  top: calc(var(--s-4) + 1em * var(--lh-body) / 2 - 2.5px);
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: rgba(28,28,28,0.32);
+/* Device mockups on transparency: the frame comes from the image. */
+.phone { margin: 0; }
+
+/* The ratio is the image's, so the box holds its place before it loads. */
+.phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1080 / 2198;
 }
 
 /* ── Is / isn't ────────────────────────────────────────────── */
@@ -238,64 +303,6 @@ h1, h2 {
 .card-no li { color: var(--fg-2); }
 .card-no li::before { content: "✕"; color: var(--fg-4); }
 
-/* ── Screens ───────────────────────────────────────────────── */
-
-.screens { padding-bottom: clamp(64px, 10vw, 128px); }
-
-.screens-h {
-  margin: var(--s-4) 0 clamp(32px, 5vw, 56px);
-  font-size: clamp(26px, 3.2vw, 40px);
-  line-height: 1.06;
-}
-
-.screens-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: clamp(14px, 2vw, 28px);
-}
-
-/* Device mockups on transparency: the frame comes from the image. */
-.phone {
-  position: relative;
-  margin: 0;
-}
-
-/* The ratio is the image's, so the box holds its place before it loads and
-   a caption can sit underneath. */
-.phone img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1080 / 2198;
-  object-fit: contain;
-}
-
-.phone figcaption {
-  margin-top: var(--s-4);
-  font-size: 15px;
-  line-height: var(--lh-body);
-  letter-spacing: var(--ls-snug);
-  color: var(--fg-2);
-  text-align: center;
-}
-
-.phone.is-empty img { display: none; }
-
-.phone.is-empty::after {
-  content: "Screenshot";
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  border-radius: clamp(20px, 3vw, 34px);
-  background: rgba(28,28,28,0.04);
-  font-family: var(--font-body);
-  font-size: var(--t-meta);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--fg-4);
-}
-
 /* ── Footer ────────────────────────────────────────────────── */
 
 footer { border-top: 1px solid rgba(28,28,28,0.12); }
@@ -318,6 +325,37 @@ footer { border-top: 1px solid rgba(28,28,28,0.12); }
 .foot-links a { transition: color 140ms ease; }
 .foot-links a:hover { color: var(--ink); }
 
+/* The home page's footer: columns, then a bar. */
+.foot-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, minmax(0, 1fr));
+  gap: var(--s-8);
+  padding-block: var(--s-10) var(--s-8);
+}
+
+.foot-col { display: flex; flex-direction: column; gap: var(--s-3); }
+.foot-col .eyebrow { margin-bottom: var(--s-1); }
+.foot-col a {
+  font-size: var(--t-body-sm);
+  letter-spacing: var(--ls-snug);
+  color: var(--fg-2);
+  transition: color 140ms ease;
+}
+.foot-col a:hover { color: var(--ink); }
+
+.foot-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding-block: var(--s-5) calc(var(--s-10) + env(safe-area-inset-bottom));
+  border-top: 1px solid rgba(28,28,28,0.08);
+  font-size: var(--t-body-sm);
+  color: var(--fg-3);
+}
+.foot-bar a:hover { color: var(--ink); }
+
 .lang {
   padding: 3px 10px;
   border: 1px solid currentColor;
@@ -329,11 +367,15 @@ footer { border-top: 1px solid rgba(28,28,28,0.12); }
 /* ── Responsive ────────────────────────────────────────────── */
 
 @media (max-width: 860px) {
-  .hero-grid,
-  .steps-grid { grid-template-columns: 1fr; }
-
   .hero h1 { max-width: 14ch; }
-  .hero-phone { width: min(78%, 300px); margin-top: var(--s-4); }
+  .qr { display: none; }
+
+  .feature { grid-template-columns: 1fr; }
+  .feature:nth-of-type(even) .feature-copy { order: 0; }
+  .feature .phone { width: min(72%, 280px); }
+
+  .foot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .foot-brand { grid-column: 1 / -1; }
 }
 
 @media (max-width: 620px) {
@@ -341,23 +383,6 @@ footer { border-top: 1px solid rgba(28,28,28,0.12); }
 
   .cta { width: 100%; justify-content: center; }
   .cta-meta { width: 100%; text-align: center; }
-
-  /* Three phones side by side stop reading below ~620px. */
-  .screens-row {
-    grid-auto-flow: column;
-    grid-auto-columns: 68vw;
-    grid-template-columns: none;
-    gap: var(--s-4);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    margin: 0 calc(-1 * var(--s-4));
-    padding: 0 var(--s-4) var(--s-4);
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-
-  .screens-row::-webkit-scrollbar { display: none; }
-  .phone { scroll-snap-align: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -400,19 +425,66 @@ button.cta {
 
 button.cta:disabled { cursor: default; opacity: 1; }
 
-/* ── Press line ────────────────────────────────────────────── */
+/* ── Store marks ───────────────────────────────────────────── */
 
-.press {
-  flex: 1 1 100%;
-  order: 3;
-  padding-top: var(--s-4);
-  border-top: 1px solid rgba(28,28,28,0.10);
-  color: var(--fg-3);
-  transition: color 140ms ease;
+.store-mark {
+  width: 18px;
+  height: 18px;
+  flex: none;
+  margin-right: 1px;
 }
 
-.press:hover { color: var(--ink); }
+.cta { gap: var(--s-2); }
 
-@media (min-width: 721px) {
-  .press { flex: 0 1 auto; order: 0; padding-top: 0; border-top: 0; }
+/* ── Store badges ──────────────────────────────────────────── */
+
+/* Apple's artwork is the pill itself (119.664 x 40, no padding). Google's
+   646 x 250 PNG holds a 564 x 168 pill inset by 41px, so matching the file
+   heights leaves its pill 33% short. Scale Google by 250/168 and crop the
+   41px back off, and the two pills end up identical. */
+.cta-row { --badge-h: clamp(44px, 4.2vw, 52px); }
+
+.badge {
+  display: inline-flex;
+  overflow: hidden;
+  border-radius: var(--r-pill);
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.badge img { display: block; width: auto; }
+
+.badge[data-ios] img { height: var(--badge-h); }
+
+.badge[data-android] img {
+  height: calc(var(--badge-h) * 1.488);
+  margin: calc(var(--badge-h) * -0.244);
+}
+
+.badge:hover { opacity: 0.88; transform: translateY(-1px); }
+.badge:active { transform: translateY(0); }
+
+/* ── Instagram ─────────────────────────────────────────────── */
+
+.ig-link { display: inline-flex; align-items: center; gap: var(--s-2); }
+.ig { width: 16px; height: 16px; flex: none; }
+
+/* ── Scroll reveal ─────────────────────────────────────────── */
+
+/* The .reveal class is added by script, so without JavaScript nothing is
+   hidden and the page reads normally. */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 620ms cubic-bezier(.22,.61,.36,1),
+              transform 620ms cubic-bezier(.22,.61,.36,1);
+}
+
+.js-reveal .reveal.is-in { opacity: 1; transform: none; }
+
+/* Staggered children, for rows of cards. */
+.js-reveal .reveal[data-delay="1"] { transition-delay: 90ms; }
+.js-reveal .reveal[data-delay="2"] { transition-delay: 180ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
 }
