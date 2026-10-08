@@ -116,8 +116,16 @@ h1, h2 {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(to top,
-    rgba(12,10,12,0.72) 0%, rgba(12,10,12,0.38) 45%, rgba(12,10,12,0.18) 75%, rgba(12,10,12,0.32) 100%);
+  /* Two gradients: one up from the base, one in from the left. The left one
+     is what lets a bright frame — the party, the hike — carry white copy
+     without washing it out. */
+  background:
+    linear-gradient(to right,
+      rgba(12,10,12,0.78) 0%, rgba(12,10,12,0.55) 32%,
+      rgba(12,10,12,0.12) 62%, rgba(12,10,12,0) 100%),
+    linear-gradient(to top,
+      rgba(12,10,12,0.72) 0%, rgba(12,10,12,0.34) 45%,
+      rgba(12,10,12,0.16) 75%, rgba(12,10,12,0.30) 100%);
 }
 
 .hero .brand { color: var(--p-white); }
