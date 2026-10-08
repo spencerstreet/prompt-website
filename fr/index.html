@@ -38,7 +38,11 @@
        over it. Placeholder photo for now; chips that swap it by activity
        come once there are photos to match. -->
   <section class="hero">
-    <img class="hero-bg" src="../assets/hero.jpg" alt="" fetchpriority="high" />
+    <div class="hero-media" aria-hidden="true">
+      <!-- First image only is eager; the rest load after paint and crossfade.
+           Add 02-drinks.jpg, 03-hike.jpg, 04-museum.jpg here and they join in. -->
+      <img src="../assets/hero/01-dinner.jpg" alt="" fetchpriority="high" />
+    </div>
     <header class="top">
       <div class="wrap top-inner">
         <a class="brand" href="/fr/" aria-label="Catchup">
@@ -276,6 +280,42 @@
       if (r.top < window.innerHeight && r.bottom > 0) { show(el); return; }
       io.observe(el);
     });
+  })();
+
+  // Hero crossfade. Shows the range of plans — dinner, drinks, a hike — so it
+  // only runs when there is more than one image to show.
+  (function () {
+    var media = document.querySelector('.hero-media');
+    if (!media) return;
+    var imgs = Array.prototype.slice.call(media.querySelectorAll('img'));
+    if (imgs.length < 2) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    // Only the first is eager; fetch the rest once the page has painted.
+    imgs.slice(1).forEach(function (img) {
+      if (!img.getAttribute('loading')) img.setAttribute('loading', 'lazy');
+    });
+
+    media.classList.add('is-live');
+    imgs[0].classList.add('is-on');
+
+    var i = 0, timer = null;
+    var HOLD = 6000;
+
+    function step() {
+      var next = (i + 1) % imgs.length;
+      imgs[next].classList.add('is-on');
+      imgs[i].classList.remove('is-on');
+      i = next;
+    }
+    function start() { if (!timer) timer = setInterval(step, HOLD); }
+    function stop() { clearInterval(timer); timer = null; }
+
+    // No point animating a tab nobody is looking at.
+    document.addEventListener('visibilitychange', function () {
+      document.hidden ? stop() : start();
+    });
+    start();
   })();
 </script>
 </body>

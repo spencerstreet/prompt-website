@@ -81,14 +81,34 @@ h1, h2 {
   color: var(--p-white);
 }
 
-.hero-bg {
+.hero-media {
   position: absolute;
   inset: 0;
   z-index: -2;
+}
+
+.hero-media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: 50% 40%;
+  opacity: 0;
+}
+
+/* Without script the first frame is simply the hero image. */
+.hero-media img:first-child { opacity: 1; }
+
+.hero-media.is-live img {
+  opacity: 0;
+  transition: opacity 1200ms ease-in-out;
+}
+
+.hero-media.is-live img.is-on { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-media img { transition: none; }
 }
 
 .hero::after {
