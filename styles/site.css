@@ -253,6 +253,9 @@ h1, h2 {
   border-top: 1px solid rgba(28,28,28,0.12);
 }
 
+/* No rule under the hero: "Anyone keen?" flows straight into "Float an idea". */
+.feature:first-of-type { border-top: 0; }
+
 .feature:nth-of-type(even) .feature-copy { order: 2; }
 
 .feature h3 {
@@ -517,3 +520,6 @@ button.cta:disabled { cursor: default; opacity: 1; }
 @media (prefers-reduced-motion: reduce) {
   .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
 }
+
+/* Hero sub: "and see who's in." always sits on its own line, never an orphaned "in." */
+.hero-sub { text-wrap: balance; }
