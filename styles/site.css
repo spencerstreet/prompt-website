@@ -53,7 +53,13 @@ h1, h2 {
 
 /* ── Masthead ──────────────────────────────────────────────── */
 
-.top-inner { padding-block: var(--s-6); }
+.top-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding-block: var(--s-6);
+}
 
 .brand {
   display: inline-flex;
@@ -523,3 +529,24 @@ button.cta:disabled { cursor: default; opacity: 1; }
 
 /* Hero sub: "and see who's in." always sits on its own line, never an orphaned "in." */
 .hero-sub { text-wrap: balance; }
+
+/* ── Masthead Instagram ────────────────────────────────────── */
+
+/* Desktop only. On a phone the brand sits alone and nothing is expected
+   beside it, and the badges are a few centimetres below anyway. */
+.top-ig {
+  display: none;
+  align-items: center;
+  gap: 9px;
+  font-size: 15px;
+  letter-spacing: var(--ls-snug);
+  color: rgba(255,255,255,0.86);
+  transition: color 140ms ease;
+}
+
+.top-ig:hover { color: var(--p-white); }
+.top-ig .ig { width: 17px; height: 17px; flex: none; }
+
+@media (min-width: 861px) {
+  .top-ig { display: inline-flex; }
+}
